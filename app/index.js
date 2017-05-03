@@ -2,12 +2,17 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 require('./index.css');
 
-class App extends React.Component {
+const SHOUT_DATA = {
+  shout: 'YOO',
+  color: 'white'
+}
+
+class Megaphone extends React.Component {
   render() {
     return (
-      <h1>Hello World</h1>
+      <h1 style={{color: this.props.data.color}}>{this.props.data.shout}</h1>
     )
   }
 }
 
-ReactDOM.render( <App />, document.getElementById('app'));  
+ReactDOM.render( <Megaphone data={SHOUT_DATA} />, document.getElementById('app'));
