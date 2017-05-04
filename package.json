@@ -13,13 +13,17 @@
   "author": "Robert Tyree",
   "license": "ISC",
   "babel": {
-    "presets": ["env", "react"]
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "bugs": {
     "url": "https://github.com/tyreer/react-scratch/issues"
   },
   "homepage": "https://github.com/tyreer/react-scratch#readme",
   "dependencies": {
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4"
   },
