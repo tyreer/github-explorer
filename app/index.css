@@ -1,6 +1,26 @@
 body {
   background: tomato;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
   max-width: 800px;
   margin: 0 auto;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
+}
+
+.languages {
+  display: flex;
+  justify-content: space-around;
+}
+
+.languages li {
+  cursor: pointer;
 }
