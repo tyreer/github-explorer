@@ -37,19 +37,25 @@ class Famous extends React.Component {
       selectedLanguage: 'All',
       repos: null,
     };
-
     this.updateLanguage = this.updateLanguage.bind(this);
   }
 
   componentDidMount () {
-    api.fetchPopularRepos(this.state.selectedLanguage)
-      .then((repos) => {
-        console.log(repos)
-      })
+    this.updateLanguage(this.state.selectedLanguage);
   }
 
   updateLanguage(language) {
-    this.setState( { selectedLanguage: language } );
+    this.setState({
+      selectedLanguage: language,
+      repos: null
+    });
+    
+    api.fetchPopularRepos(language)
+      .then((repos) => {
+        this.setState({
+          repos: repos
+        })
+      });
   }
 
   render() {
@@ -57,7 +63,9 @@ class Famous extends React.Component {
       <div>
         <SelectLanguage
           selectedLanguage={this.state.selectedLanguage}
-          updateLanguage={this.updateLanguage} />
+          updateLanguage={this.updateLanguage}
+        />
+        {JSON.stringify(this.state.repos, null, 2)}
       </div>
     )
   }
