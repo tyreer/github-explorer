@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = require('prop-types');
+var api = require('../utils/api');
 
 const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
   const languages = ['All', 'JavaScript', 'CSS'];
@@ -11,8 +12,8 @@ const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
         {languages.map(language => {
           return (
             <li
-              style={language === selectedLanguage ? {color: 'white'}: null}
               key={language}
+              style={language === selectedLanguage ? {color: 'white'}: null}
               onClick={() => {updateLanguage(language)}}
               >
               {language}
@@ -22,7 +23,6 @@ const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
       </ul>
     </div>
   )
-
 }
 
 SelectLanguage.propTypes = {
@@ -34,10 +34,18 @@ class Famous extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedLanguage: 'All'
+      selectedLanguage: 'All',
+      repos: null,
     };
 
     this.updateLanguage = this.updateLanguage.bind(this);
+  }
+
+  componentDidMount () {
+    api.fetchPopularRepos(this.state.selectedLanguage)
+      .then((repos) => {
+        console.log(repos)
+      })
   }
 
   updateLanguage(language) {
