@@ -1,6 +1,10 @@
 var React = require('react');
 var Famous = require('./Famous');
 var Megaphone = require('./Megaphone');
+var ReactRouter = require('react-router-dom');
+var Router = ReactRouter.BrowserRouter;
+var Route = ReactRouter.Route;
+var Nav = require('./Nav');
 
 class App extends React.Component {
   render() {
@@ -24,10 +28,13 @@ class App extends React.Component {
     ];
 
     return (
-      <div className='container'>
-        <Famous />
-        <Megaphone data={SHOUT_DATA} color={'white'} />
-      </div>
+      <Router>
+        <div className='container'>
+          <Nav />
+          <Route path='/famous' component={Famous} />
+          <Megaphone data={SHOUT_DATA} color={'white'} />
+        </div>
+      </Router>
     )
   }
 }

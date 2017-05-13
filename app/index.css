@@ -49,3 +49,15 @@ li {
 .languages li {
   cursor: pointer;
 }
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  margin-right: 15px;
+}
+
+.active {
+  font-weight: bold;
+}
