@@ -1,10 +1,13 @@
-var React = require('react');
-var Famous = require('./Famous');
-var Megaphone = require('./Megaphone');
-var ReactRouter = require('react-router-dom');
-var Router = ReactRouter.BrowserRouter;
-var Route = ReactRouter.Route;
-var Nav = require('./Nav');
+const React = require('react');
+const ReactRouter = require('react-router-dom');
+const Router = ReactRouter.BrowserRouter;
+const Route = ReactRouter.Route;
+const Switch = ReactRouter.Switch;
+const Nav = require('./Nav');
+const Home = require('./Home');
+const Battle = require('./Battle');
+const Famous = require('./Famous');
+const Megaphone = require('./Megaphone');
 
 class App extends React.Component {
   render() {
@@ -31,7 +34,12 @@ class App extends React.Component {
       <Router>
         <div className='container'>
           <Nav />
-          <Route path='/famous' component={Famous} />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/battle' component={Battle} />
+            <Route path='/famous' component={Famous} />
+            <Route render= { () => <p>Not found</p> }/>
+          </Switch>
           <Megaphone data={SHOUT_DATA} color={'white'} />
         </div>
       </Router>

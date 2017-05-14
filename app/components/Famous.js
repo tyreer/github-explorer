@@ -13,7 +13,7 @@ const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
           return (
             <li
               key={language}
-              style={language === selectedLanguage ? {color: 'white'}: null}
+              style={language === selectedLanguage ? {color: 'white'} : null }
               onClick={() => {updateLanguage(language)}}
               >
               {language}
