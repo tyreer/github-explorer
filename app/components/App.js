@@ -8,6 +8,7 @@ const Home = require('./Home');
 const Battle = require('./Battle');
 const Famous = require('./Famous');
 const Megaphone = require('./Megaphone');
+const Results = require('./Results');
 
 class App extends React.Component {
   render() {
@@ -37,6 +38,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/battle' component={Battle} />
+            <Route path='/battle/results' component={Results} />
             <Route path='/famous' component={Famous} />
             <Route render= { () => <p>Not found</p> }/>
           </Switch>
