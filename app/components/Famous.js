@@ -1,6 +1,8 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var api = require('../utils/api');
+import Loading from './Loading';
+
 
 const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
   const languages = ['All', 'JavaScript', 'CSS'];
@@ -95,7 +97,7 @@ class Famous extends React.Component {
           updateLanguage={this.updateLanguage}
         />
         {!this.state.repos
-        ? <p>LOADING</p>
+        ? <Loading />
         : <RepoGrid repos={this.state.repos} />}
       </div>
     )
