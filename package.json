@@ -4,7 +4,10 @@
   "description": "An exercise in building a React app from scratch loosly following Tyler McGinnis's React Fundamentals course",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "NODE_ENV='production' webpack -p",
+    "deploy": "npm run build && firebase deploy",
+    "firebase-init": "firebase login && firebase init"
   },
   "repository": {
     "type": "git",
@@ -41,4 +44,5 @@
     "webpack": "^2.4.1",
     "webpack-dev-server": "^2.4.5"
   }
+
 }
