@@ -1,16 +1,14 @@
-const React = require('react');
-const ReactRouter = require('react-router-dom');
-const Router = ReactRouter.BrowserRouter;
-const Route = ReactRouter.Route;
-const Switch = ReactRouter.Switch;
-const Nav = require('./Nav');
-const Home = require('./Home');
-const Battle = require('./Battle');
-const Famous = require('./Famous');
-const Megaphone = require('./Megaphone');
-const Results = require('./Results');
+import React, { Component } from 'react';
+import { ReactRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
+import Nav from './Nav';
+import Home from './Home';
+import Battle from './Battle';
+import Famous from './Famous';
+import Megaphone from './Megaphone';
+import Results from './Results';
 
-class App extends React.Component {
+export default class App extends Component {
+
   render() {
     const SHOUT_DATA = [
         {
@@ -32,7 +30,7 @@ class App extends React.Component {
     ];
 
     return (
-      <Router>
+      <BrowserRouter>
         <div className='container'>
           <Nav />
           <Switch>
@@ -44,9 +42,7 @@ class App extends React.Component {
           </Switch>
           <Megaphone data={SHOUT_DATA} color={'white'} />
         </div>
-      </Router>
+      </BrowserRouter>
     )
   }
 }
-
-module.exports = App;

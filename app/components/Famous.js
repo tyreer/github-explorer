@@ -1,6 +1,6 @@
-var React = require('react');
-var PropTypes = require('prop-types');
-var api = require('../utils/api');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { fetchPopularRepos } from '../utils/api';
 import Loading from './Loading';
 
 
@@ -61,7 +61,7 @@ RepoGrid.propTypes = {
   repos: PropTypes.array.isRequired,
 }
 
-class Famous extends React.Component {
+export default class Famous extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -81,7 +81,7 @@ class Famous extends React.Component {
       repos: null
     });
 
-    api.fetchPopularRepos(language)
+    fetchPopularRepos(language)
       .then((repos) => {
         this.setState({
           repos: repos
@@ -103,5 +103,3 @@ class Famous extends React.Component {
     )
   }
 }
-
-module.exports = Famous;

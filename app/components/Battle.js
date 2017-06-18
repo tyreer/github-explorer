@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-var PlayerPreview = require('./PlayerPreview');
+import PlayerPreview from './PlayerPreview';
 
-class PlayerInput extends React.Component {
+class PlayerInput extends Component {
   constructor(props) {
     super(props);
 
@@ -67,7 +67,7 @@ PlayerInput.defaultProps = {
   label: 'Username',
 }
 
-class Battle extends Component {
+export default class Battle extends Component {
   constructor(props) {
     super(props);
 
@@ -161,5 +161,3 @@ class Battle extends Component {
     )
   }
 }
-
-module.exports = Battle;

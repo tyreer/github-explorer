@@ -1,4 +1,4 @@
-var axios = require('axios');
+import axios from 'axios';
 
 function getProfile (username) {
   return axios.get(`https://api.github.com/users/${username}`)
@@ -53,13 +53,13 @@ function sortPlayers (players) {
   });
 }
 
-module.exports = {
-  battle: function(players) {
+export function battle (players) {
     return axios.all(players.map(getUserData))
       .then(sortPlayers)
       .catch(handleError);
-  },
-  fetchPopularRepos: function(language) {
+  }
+
+export function fetchPopularRepos (language) {
       let encodedURI = window.encodeURI(`https://api.github.com/search/repositories?q=stars:>1+language:${language}&sort=stars&order=desc&type=Repositories`);
 
       return axios.get(encodedURI)
@@ -67,4 +67,3 @@ module.exports = {
           return response.data.items;
         });
   }
-}

@@ -1,7 +1,7 @@
-var React = require('react');
-var PropTypes = require('prop-types');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class Megaphone extends React.Component {
+export default class Megaphone extends Component {
   render() {
     return (
       <div style={{color: this.props.color}}>
@@ -25,5 +25,3 @@ Megaphone.propTypes = {
   })).isRequired,
   color: PropTypes.string,
 }
-
-module.exports = Megaphone;
