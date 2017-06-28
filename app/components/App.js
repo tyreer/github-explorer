@@ -6,6 +6,7 @@ import Battle from './Battle';
 import Famous from './Famous';
 import Megaphone from './Megaphone';
 import Results from './Results';
+import Followers from './Followers';
 
 export default class App extends Component {
 
@@ -38,6 +39,7 @@ export default class App extends Component {
             <Route exact path='/battle' component={Battle} />
             <Route path='/battle/results' component={Results} />
             <Route path='/famous' component={Famous} />
+            <Route path='/followers' component={Followers} />
             <Route render= { () => <p>Not found</p> }/>
           </Switch>
           <Megaphone data={SHOUT_DATA} color={'white'} />

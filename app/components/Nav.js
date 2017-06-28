@@ -19,6 +19,11 @@ export default function Nav () {
           Famous
         </NavLink>
       </li>
+      <li>
+        <NavLink activeClassName='active' to='/followers'>
+          Followers
+        </NavLink>
+      </li>
     </ul>
   )
 }
