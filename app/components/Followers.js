@@ -27,14 +27,11 @@ export default class Followers extends Component {
 
   render() {
     return (
-      <div>
-        <button
-          className='button'
-          type='submit'
-          onClick={this.handleClick.bind(this)}>>
-            {this.props.label}
-        </button>
-      </div>
+      <PlayerInput
+        id='playerOne'
+        label= {this.props.label}
+        onSubmit={this.handleClick}
+      />
     )
   }
 }
@@ -44,5 +41,5 @@ Followers.propTypes = {
 }
 
 Followers.defaultProps = {
-  label: 'Testing Button',
+  label: `Creep on this user's followers`,
 }
