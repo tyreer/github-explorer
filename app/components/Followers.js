@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
+import PlayerInput from './PlayerInput';
 
 
 export default class Followers extends Component {
