@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { fetchPopularRepos } from '../utils/api';
 import PlayerInput from './PlayerInput';
 
 
@@ -9,28 +8,28 @@ export default class Followers extends Component {
     super(props);
 
     this.state = {
-      repos: ''
+      name: '',
+      image: null
     };
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
    }
 
-   handleClick() {
-     fetchPopularRepos('JavaScript')
-       .then((repos) => {
-         this.setState({
-           repos: repos
-         })
-         console.log(this.state.repos);
+   handleSubmit(id, username) {
+     this.setState(() => {
+       let newState = {};
+       newState['name'] = username;
+       newState['image'] = `https://github.com/${username}.png?size=200`;
+       return newState;
      });
-  }
+   }
 
   render() {
     return (
       <PlayerInput
-        id='playerOne'
+        id='followed'
         label= {this.props.label}
-        onSubmit={this.handleClick}
+        onSubmit={this.handleSubmit}
       />
     )
   }
