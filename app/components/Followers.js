@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PlayerInput from './PlayerInput';
+import PlayerPreview from './PlayerPreview';
+
 
 
 export default class Followers extends Component {
@@ -25,12 +27,27 @@ export default class Followers extends Component {
    }
 
   render() {
+    let name = this.state.name;
+    let image = this.state.image;
+
     return (
-      <PlayerInput
-        id='followed'
-        label= {this.props.label}
-        onSubmit={this.handleSubmit}
-      />
+      <div>
+        {!name &&
+          <PlayerInput
+            id='followed'
+            label= {this.props.label}
+            onSubmit={this.handleSubmit}
+          />
+        }
+
+        {image !== null &&
+          <PlayerPreview
+            avatar={image}
+            username={name}>
+          </PlayerPreview>
+        }
+
+      </div>
     )
   }
 }
