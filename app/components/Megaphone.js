@@ -25,3 +25,24 @@ Megaphone.propTypes = {
   })).isRequired,
   color: PropTypes.string,
 }
+
+// const SHOUT_DATA = [
+//     {
+//       id: 1,
+//       content: 'YOO'
+//     },
+//     {
+//       id: 2,
+//       content: 'NOO'
+//     },
+//     {
+//       id: 3,
+//       content: 'OOOOOOO'
+//     },
+//     {
+//       id: 4,
+//       content: 'BOOOO'
+//     }
+// ];
+
+// <Megaphone data={SHOUT_DATA} color={'white'} />

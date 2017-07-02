@@ -11,24 +11,6 @@ import Followers from './Followers';
 export default class App extends Component {
 
   render() {
-    const SHOUT_DATA = [
-        {
-          id: 1,
-          content: 'YOO'
-        },
-        {
-          id: 2,
-          content: 'NOO'
-        },
-        {
-          id: 3,
-          content: 'OOOOOOO'
-        },
-        {
-          id: 4,
-          content: 'BOOOO'
-        }
-    ];
 
     return (
       <BrowserRouter>
@@ -42,7 +24,6 @@ export default class App extends Component {
             <Route path='/followers' component={Followers} />
             <Route render= { () => <p>Not found</p> }/>
           </Switch>
-          <Megaphone data={SHOUT_DATA} color={'white'} />
         </div>
       </BrowserRouter>
     )
