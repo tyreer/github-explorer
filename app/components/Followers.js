@@ -15,6 +15,7 @@ export default class Followers extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
    }
 
    handleSubmit(id, username) {
@@ -24,6 +25,15 @@ export default class Followers extends Component {
        newState['image'] = `https://github.com/${username}.png?size=200`;
        return newState;
      });
+   }
+
+   handleReset() {
+    this.setState(() => {
+      var newState = {};
+      newState['name'] = '';
+      newState['image'] = null;
+      return newState;
+    })
    }
 
   render() {
@@ -44,6 +54,15 @@ export default class Followers extends Component {
           <PlayerPreview
             avatar={image}
             username={name}>
+            <button
+              className='reset'>
+                Creep
+            </button>
+            <button
+              className='reset'
+              onClick={this.handleReset}>
+                Nah, reset
+            </button>
           </PlayerPreview>
         }
 
