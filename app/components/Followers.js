@@ -73,7 +73,6 @@ export default class Followers extends Component {
             </Link>
           </div>
         }
-
       </div>
     )
   }
