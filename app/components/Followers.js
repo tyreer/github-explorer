@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 
@@ -37,6 +38,7 @@ export default class Followers extends Component {
    }
 
   render() {
+    let match = this.props.match;
     let name = this.state.name;
     let image = this.state.image;
 
@@ -51,19 +53,25 @@ export default class Followers extends Component {
         }
 
         {image !== null &&
-          <PlayerPreview
-            avatar={image}
-            username={name}>
-            <button
-              className='reset'>
+          <div>
+            <PlayerPreview
+              avatar={image}
+              username={name}>
+              <button
+                className='reset'
+                onClick={this.handleReset}>
+                  Nah, reset
+              </button>
+            </PlayerPreview>
+            <Link
+              className='button'
+              to={{
+                 pathname: match.url + '/results',
+                 search: '?followed=' + name
+               }}>
                 Creep
-            </button>
-            <button
-              className='reset'
-              onClick={this.handleReset}>
-                Nah, reset
-            </button>
-          </PlayerPreview>
+            </Link>
+          </div>
         }
 
       </div>
