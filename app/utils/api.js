@@ -53,6 +53,13 @@ function sortPlayers (players) {
   });
 }
 
+export function getFollowers (username) {
+  return axios.get(`https://api.github.com/users/${username}/followers`)
+    .then(function(user) {
+      return user.data;
+    })
+}
+
 export function battle (players) {
     return axios.all(players.map(getUserData))
       .then(sortPlayers)
