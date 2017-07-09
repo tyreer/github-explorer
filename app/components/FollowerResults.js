@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
-import { getFollowers } from '../utils/api';
+import { getAllFollowersData } from '../utils/api';
 
 
 export default class FollowerResults extends Component {
@@ -15,7 +15,7 @@ export default class FollowerResults extends Component {
   componentDidMount() {
     const followed = queryString.parse(this.props.location.search);
 
-    getFollowers(followed.followed)
+    getAllFollowersData(followed.username)
     .then(function(data) {
       return this.setState(
         {
@@ -28,20 +28,24 @@ export default class FollowerResults extends Component {
   render() {
     if (this.state.followers === null){
       return (
-        <div className='row'>
+      <div className='row'>
          <h1>Loading</h1>
-       </div>
+      </div>
       )
     } else {
       return (
-        <div className='row'>
-         <h1>{this.state.followers[0].login}</h1>
-         <h1>{this.state.followers[1].login}</h1>
-         <h1>{this.state.followers[2].login}</h1>
-         <h1>{this.state.followers[3].login}</h1>
-         <h1>{this.state.followers[4].login}</h1>
-       </div>
+        <div className='column'>
+          <h1>{this.state.followers[0].data.bio}</h1>
+          <h1>{this.state.followers[1].data.bio}</h1>
+          <h1>{this.state.followers[2].data.bio}</h1>
+          <h1>{this.state.followers[3].data.bio}</h1>
+          <h1>{this.state.followers[4].data.bio}</h1>
+          <h1>{this.state.followers[5].data.bio}</h1>
+          <h1>{this.state.followers[6].data.bio}</h1>
+          <h1>{this.state.followers[7].data.bio}</h1>
+          <h1>{this.state.followers[8].data.bio}</h1>
+        </div>
       )
     }
   }
-}
+  }

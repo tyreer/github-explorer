@@ -67,7 +67,7 @@ export default class Followers extends Component {
               className='button'
               to={{
                  pathname: match.url + '/results',
-                 search: '?followed=' + name
+                 search: '?username=' + name
                }}>
                 Creep
             </Link>
