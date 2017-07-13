@@ -35,15 +35,22 @@ export default class FollowerResults extends Component {
     } else {
       return (
         <div className='column'>
-          <h1>{this.state.followers[0].data.bio}</h1>
-          <h1>{this.state.followers[1].data.bio}</h1>
-          <h1>{this.state.followers[2].data.bio}</h1>
-          <h1>{this.state.followers[3].data.bio}</h1>
-          <h1>{this.state.followers[4].data.bio}</h1>
-          <h1>{this.state.followers[5].data.bio}</h1>
-          <h1>{this.state.followers[6].data.bio}</h1>
-          <h1>{this.state.followers[7].data.bio}</h1>
-          <h1>{this.state.followers[8].data.bio}</h1>
+        {this.state.followers.map(follower => {
+          return (
+            <div>
+              <h1>
+                {follower.data.name}
+              </h1>
+              <h1>
+                {follower.data.bio}
+              </h1>
+              <h1>
+                {follower.data.location}
+              </h1>
+              <img src={follower.data.avatar_url}/>
+            </div>
+          )
+        })}
         </div>
       )
     }

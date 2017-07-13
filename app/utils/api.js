@@ -54,7 +54,6 @@ function sortPlayers (players) {
 }
 
 function getFollowersData (follower) {
-  console.log(follower)
   return axios.get(`https://api.github.com/users/${follower.login}`)
 }
 
