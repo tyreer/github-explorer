@@ -8,8 +8,11 @@ export default class FollowerResults extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      followers: null
+      followers: null,
+      displayedFollower: null,
+      index: 0
     }
+    this.nextFollower = this.nextFollower.bind(this);
   }
 
   componentDidMount() {
@@ -17,40 +20,61 @@ export default class FollowerResults extends Component {
 
     getAllFollowersData(followed.username)
     .then(function(data) {
+
+      let mungedData = data.map(follower => {
+        return (
+          <div key={follower.data.id} onClick={this.nextFollower}>
+          <img className="FollowerResults-img" src={follower.data.avatar_url}/>
+            <h1>
+              {follower.data.name}
+            </h1>
+            <h1>
+              {follower.data.location}
+            </h1>
+            <h1>
+              {follower.data.bio}
+            </h1>
+          </div>
+        )
+      })
+
       return this.setState(
         {
-          followers: data
+          followers: mungedData,
+          displayedFollower: mungedData[0]
         }
       );
     }.bind(this));
   }
 
+  nextFollower() {
+    let incrementIndex = this.state.index;
+    
+    if (incrementIndex === (this.state.followers.length -1)) {
+      incrementIndex = 0;
+    } else {
+      incrementIndex++;
+    }
+
+    this.setState(
+      {
+        displayedFollower: this.state.followers[incrementIndex],
+        index: incrementIndex
+      }
+    );
+  }
+
   render() {
     if (this.state.followers === null){
       return (
-      <div className='row'>
+      <div className='FollowerResults-container'>
          <h1>Loading</h1>
       </div>
       )
     } else {
       return (
-        <div className='column'>
-        {this.state.followers.map(follower => {
-          return (
-            <div>
-              <h1>
-                {follower.data.name}
-              </h1>
-              <h1>
-                {follower.data.bio}
-              </h1>
-              <h1>
-                {follower.data.location}
-              </h1>
-              <img src={follower.data.avatar_url}/>
-            </div>
-          )
-        })}
+        <div className='FollowerResults-container'>
+          {this.state.displayedFollower}
         </div>
       )
     }
