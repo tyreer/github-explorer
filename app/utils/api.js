@@ -52,9 +52,11 @@ function sortPlayers (players) {
     return b.score - a.score;
   });
 }
-
-function getFollowersData (follower) {
-  return axios.get(`https://api.github.com/users/${follower.login}`)
+const APICallLimit = 2;
+function getFollowersData (follower, index) {
+  if (index < APICallLimit) {
+    return axios.get(`https://api.github.com/users/${follower.login}`)
+  }
 }
 
 function getFollowers (username) {
@@ -65,10 +67,13 @@ function getFollowers (username) {
 }
 
 export function getAllFollowersData (username) {
+  const limit = 3;
   return getFollowers(username)
     .then(function(followersArray) {
       return axios.all(followersArray.map(getFollowersData))
-    })
+    }).then(function(followersDataArray) {
+      return followersDataArray.slice(0, APICallLimit);
+    });
 }
 
 export function battle (players) {

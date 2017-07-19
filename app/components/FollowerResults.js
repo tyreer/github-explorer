@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { getAllFollowersData } from '../utils/api';
+import logo from '../assets/github-logo.png';
 
 
 export default class FollowerResults extends Component {
@@ -25,15 +26,18 @@ export default class FollowerResults extends Component {
         return (
           <div key={follower.data.id} onClick={this.nextFollower}>
           <img className="FollowerResults-img" src={follower.data.avatar_url}/>
-            <h1>
-              {follower.data.name}
-            </h1>
-            <h1>
-              {follower.data.location}
-            </h1>
-            <h1>
-              {follower.data.bio}
-            </h1>
+          <h1>
+            {follower.data.name}
+          </h1>
+          <h1>
+            {follower.data.location}
+          </h1>
+          <h1>
+            {follower.data.bio}
+          </h1>
+          <a href={follower.data.html_url}>
+            <img className="FollowerResults-img--gitHub" src={logo} alt="Github logo"/>
+          </a>
           </div>
         )
       })
@@ -49,7 +53,7 @@ export default class FollowerResults extends Component {
 
   nextFollower() {
     let incrementIndex = this.state.index;
-    
+
     if (incrementIndex === (this.state.followers.length -1)) {
       incrementIndex = 0;
     } else {
