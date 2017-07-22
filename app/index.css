@@ -152,4 +152,11 @@ a {
 .FollowerResults-img {
   width: 80vw;
   border-radius: 3%;
+  position: relative;
+}
+
+@media(min-width: 500px) {
+  .FollowerResults-img {
+    width: 40vw;
+  }
 }

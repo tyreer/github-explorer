@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 
-
-
 export default class Followers extends Component {
   constructor(props) {
     super(props);

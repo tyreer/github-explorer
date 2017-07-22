@@ -52,7 +52,9 @@ function sortPlayers (players) {
     return b.score - a.score;
   });
 }
+
 const APICallLimit = 2;
+
 function getFollowersData (follower, index) {
   if (index < APICallLimit) {
     return axios.get(`https://api.github.com/users/${follower.login}`)
