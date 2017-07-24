@@ -1,5 +1,9 @@
+:root {
+  --color-blue: #32c7ff;
+}
+
 body {
-  background: tomato;
+  background: var(--color-blue);
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 }
 
@@ -153,10 +157,8 @@ a {
   width: 80vw;
   border-radius: 3%;
   position: relative;
-}
 
-@media(min-width: 500px) {
-  .FollowerResults-img {
-    width: 40vw;
+  @media(min-width: 500px) {
+      width: 40vw;
   }
 }
