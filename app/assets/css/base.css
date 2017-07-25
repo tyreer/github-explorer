@@ -1,0 +1,31 @@
+:root {
+  --color-blue: #32c7ff;
+}
+
+@custom-media --tablet (min-width: 450px);
+
+body {
+  background: var(--color-blue);
+  font-family: system-ui;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+h1 {
+  font-size: 1.5rem;
+
+  @media (--tablet){
+    font-size: 2rem;
+  }
+}
