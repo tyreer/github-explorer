@@ -5,9 +5,9 @@ export default class Home extends Component{
   render() {
     return(
       <div className='home-container'>
-         <h1>Github Battle: Battle your friends... and stuff.</h1>
-         <Link className='button' to='/battle'>
-           Battle
+         <h1>Github Creep</h1>
+         <Link className='button' to='/followers'>
+           Creep
          </Link>
        </div>
     )

@@ -10,16 +10,6 @@ export default function Nav () {
         </NavLink>
       </li>
       <li>
-        <NavLink activeClassName='active' to='/battle'>
-          Battle
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeClassName='active' to='/famous'>
-          Famous
-        </NavLink>
-      </li>
-      <li>
         <NavLink activeClassName='active' to='/followers'>
           Followers
         </NavLink>
@@ -27,3 +17,15 @@ export default function Nav () {
     </ul>
   )
 }
+
+
+// <li>
+//   <NavLink activeClassName='active' to='/battle'>
+//     Battle
+//   </NavLink>
+// </li>
+// <li>
+//   <NavLink activeClassName='active' to='/famous'>
+//     Famous
+//   </NavLink>
+// </li>
