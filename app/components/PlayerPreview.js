@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function PlayerPreview (props) {
   return (
     <div>
-      <div className='column'>
+      <div className={props.className}>
         <img
           className='avatar'
           src={props.avatar}
@@ -20,4 +20,9 @@ export default function PlayerPreview (props) {
 PlayerPreview.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
+
+PlayerPreview.defaultProps = {
+  className: 'column',
+}

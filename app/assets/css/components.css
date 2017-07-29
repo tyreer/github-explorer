@@ -90,13 +90,22 @@
   align-items: center;
 }
 
-.column input {
+.PlayerPreview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/*formetly .column input*/
+
+.PlayerInput__input {
   border-radius: 3px;
   margin: 10px 0;
   padding: 5px;
   border: 1px solid rgba(0, 0, 0, 0.43);
   font-size: 16px;
-  width: 80%;
+  width: 50%;
 }
 
 .column label {
@@ -141,4 +150,17 @@
   @media(min-width: 500px) {
       width: 40vw;
   }
+}
+
+.PlayerInput--single {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.PlayerInput--single label {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
 }

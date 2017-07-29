@@ -25,19 +25,19 @@ export default class FollowerResults extends Component {
       let mungedData = data.map(follower => {
         return (
           <div key={follower.data.id} onClick={this.nextFollower}>
-          <img className="FollowerResults-img" src={follower.data.avatar_url}/>
-          <h1>
-            {follower.data.name}
-          </h1>
-          <h1>
-            {follower.data.location}
-          </h1>
-          <h1>
-            {follower.data.bio}
-          </h1>
-          <a href={follower.data.html_url}>
-            <img className="FollowerResults-img--gitHub" src={logo} alt="Github logo"/>
-          </a>
+            <img className="FollowerResults-img" src={follower.data.avatar_url}/>
+            <h1>
+              {follower.data.name}
+            </h1>
+            <h1>
+              {follower.data.location}
+            </h1>
+            <h1>
+              {follower.data.bio}
+            </h1>
+            <a href={follower.data.html_url}>
+              <img className="FollowerResults-img--gitHub" src={logo} alt="Github logo"/>
+            </a>
           </div>
         )
       })

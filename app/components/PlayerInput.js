@@ -34,10 +34,11 @@ export default class PlayerInput extends Component {
 
   render() {
     return (
-      <form className='column' onSubmit={this.handleSubmit}>
+      <form className={this.props.className} onSubmit={this.handleSubmit}>
         <label className='header' htmlFor='username'>{this.props.label}</label>
         <input
           id='username'
+          className='PlayerInput__input'
           placeholder='github username'
           type='text'
           value={this.state.username}
@@ -59,8 +60,10 @@ PlayerInput.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
+  className: PropTypes.string,
 }
 
 PlayerInput.defaultProps = {
   label: 'Username',
+  className: 'column',
 }

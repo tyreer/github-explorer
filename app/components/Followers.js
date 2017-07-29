@@ -47,6 +47,7 @@ export default class Followers extends Component {
             id='followed'
             label= {this.props.label}
             onSubmit={this.handleSubmit}
+            className='PlayerInput--single'
           />
         }
 
@@ -54,7 +55,8 @@ export default class Followers extends Component {
           <div>
             <PlayerPreview
               avatar={image}
-              username={name}>
+              username={name}
+              className='PlayerPreview'>
               <button
                 className='reset'
                 onClick={this.handleReset}>
