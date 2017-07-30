@@ -69,7 +69,6 @@ function getFollowers (username) {
 }
 
 export function getAllFollowersData (username) {
-  const limit = 3;
   return getFollowers(username)
     .then(function(followersArray) {
       return axios.all(followersArray.map(getFollowersData))

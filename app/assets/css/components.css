@@ -72,6 +72,8 @@
 
 .nav {
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 
 .nav li {
@@ -142,7 +144,8 @@
 .FollowerResults-container {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50px);
+  height: 100vh;
+  margin-top: -50px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -153,6 +156,7 @@
   width: 80vw;
   border-radius: 3%;
   position: relative;
+  max-width: 450px;
 
   @media(min-width: 500px) {
       width: 40vw;
@@ -174,8 +178,8 @@
 
 .FollowerResults__topDiv {
   position: absolute;
-  left: 1%;
-  top: 6%;
+  left: -49%;
+  top: -22%;
   z-index: 1;
   transform: rotate(-30deg);
   color: white;
@@ -186,4 +190,73 @@
     & h2 {
       font-size: 2.6rem;
     }
+}
+
+.FollowerResults__bottomDiv {
+  position: fixed;
+  height: 50vh;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  background: white;
+}
+
+.FollowerResults__h3 {
+  position: absolute;
+  color: var(--color-blue);
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.FollowerResults__img--gitHub{
+  bottom: 0;
+  position: absolute;
+  right: -125px;
+  width: 90px;
+  animation: rightLeft 4s linear infinite;
+}
+
+.FollowerResults__img--followedUser {
+  bottom: 0;
+  position: absolute;
+  right: -250px;
+  width: 90px;
+  border-radius: 50%;
+  animation: leftRight 4s linear infinite;
+}
+
+.FollowerResults__container--inner {
+  position: relative;
+}
+
+@keyframes leftRight {
+	20% {
+		right: -250px;
+	}
+	25% {
+		right: -187.50px;
+	}
+	75% {
+		right: -187.50px;
+	}
+  80% {
+		right: -250px;
+	}
+}
+
+@keyframes rightLeft {
+	20% {
+		right: -125px;
+	}
+	25% {
+		right: -187.50px;
+	}
+	75% {
+		right: -187.50px;
+	}
+  80% {
+		right: -125px;
+	}
 }

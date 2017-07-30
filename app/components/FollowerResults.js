@@ -18,13 +18,14 @@ export default class FollowerResults extends Component {
 
   componentDidMount() {
     const followed = queryString.parse(this.props.location.search);
+    const followedUrl = `https://github.com/${followed.username}`;
 
     getAllFollowersData(followed.username)
     .then(function(data) {
 
       let mungedData = data.map(follower => {
         return (
-          <div key={follower.data.id} onClick={this.nextFollower}>
+          <div className="FollowerResults__container--inner" key={follower.data.id}>
             <div className="FollowerResults__topDiv">
               <h2>
                 {follower.data.name}
@@ -33,13 +34,17 @@ export default class FollowerResults extends Component {
                 {follower.data.location}
               </h2>
             </div>
-            <img className="FollowerResults__img" src={follower.data.avatar_url}/>
-            <h1>
+            <img onClick={this.nextFollower} className="FollowerResults__img" src={follower.data.avatar_url}/>
+            <h3 className="FollowerResults__h3">
               {follower.data.bio}
-            </h1>
-            <a href={follower.data.html_url}>
-              <img className="FollowerResults-img--gitHub" src={logo} alt="Github logo"/>
+            </h3>
+            <a href={followedUrl} target="_blank">
+              <img className="FollowerResults__img--followedUser" src={`https://github.com/${followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
             </a>
+            <a href={follower.data.html_url} target="_blank">
+              <img className="FollowerResults__img--gitHub" src={logo} alt="Github logo"/>
+            </a>
+            <div className="FollowerResults__bottomDiv"></div>
           </div>
         )
       })
