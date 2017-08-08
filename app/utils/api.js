@@ -53,7 +53,7 @@ function sortPlayers (players) {
   });
 }
 
-const APICallLimit = 2;
+const APICallLimit = 5;
 
 function getFollowersData (follower, index) {
   if (index < APICallLimit) {
