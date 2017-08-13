@@ -1,0 +1,58 @@
+.Followers__headline {
+  font-size: calc(170px + (450 - 170) * ((100vw - 450px) / (1280 - 450)));
+  margin: 0;
+  position: fixed;
+  top: 0vh;
+  left: -40px;
+}
+
+.button--creep:hover {
+  transition: all 0.5s;
+  background: white;
+  color: black;
+  border: 30px solid black;
+  padding: 10px;
+}
+
+.PlayerInput--single {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: -48px;
+
+    @media(min-width: 500px){
+      justify-content: center;
+    }
+}
+
+.PlayerInput--single label {
+  text-align: center;
+  font-size: 150px;
+  font-weight: 200;
+  display: none;
+}
+
+.button--creep {
+  color: #e6e6e6;
+  background: #0a0a0a;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  width: 90vw;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  height: 20vh;
+  padding: 40px;
+  margin: 10px auto;
+  align-items: center;
+  cursor: pointer;
+
+    @media(min-width: 500px) {
+      height: 39vh;
+      width: 300px;
+    }
+}

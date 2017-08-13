@@ -43,14 +43,17 @@ export default class Followers extends Component {
     return (
       <div>
         {!name &&
-          <PlayerInput
-            id='followed'
-            label= {this.props.label}
-            onSubmit={this.handleSubmit}
-            className='PlayerInput--single'
-            buttonText='BRING THE FOLLOWERS'
-            buttonClass='button--creep'
-          />
+          <div>
+            <h1 className='Followers__headline'>CREEP</h1>
+            <PlayerInput
+              id='followed'
+              label= {this.props.label}
+              onSubmit={this.handleSubmit}
+              className='PlayerInput--single'
+              buttonText='BRING THE FOLLOWERS'
+              buttonClass='button--creep'
+            />
+          </div>
         }
 
         {image !== null &&
