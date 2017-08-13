@@ -48,6 +48,8 @@ export default class Followers extends Component {
             label= {this.props.label}
             onSubmit={this.handleSubmit}
             className='PlayerInput--single'
+            buttonText='BRING THE FOLLOWERS'
+            buttonClass='button--creep'
           />
         }
 
@@ -83,5 +85,5 @@ Followers.propTypes = {
 }
 
 Followers.defaultProps = {
-  label: `Creep on this user's followers`,
+  label: `CREEP`,
 }

@@ -46,10 +46,10 @@ export default class PlayerInput extends Component {
           onChange={this.handleChange}
         />
         <button
-          className='button'
+          className={this.props.buttonClass}
           type='submit'
           disabled={!this.state.username}>
-            Submit
+            {this.props.buttonText}
         </button>
       </form>
     )
@@ -66,4 +66,6 @@ PlayerInput.propTypes = {
 PlayerInput.defaultProps = {
   label: 'Username',
   className: 'column',
+  buttonText: 'Submit',
+  buttonClass: 'button'
 }
