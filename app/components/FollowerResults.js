@@ -39,6 +39,9 @@ export default class FollowerResults extends Component {
               {follower.data.bio}
             </h3>
             <a href={followedUrl} target="_blank">
+              <img className="FollowerResults__img--followingUser" src={follower.data.avatar_url} alt="Avatar of following GitHub user"/>
+            </a>
+            <a href={followedUrl} target="_blank">
               <img className="FollowerResults__img--followedUser" src={`https://github.com/${followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
             </a>
             <a href={follower.data.html_url} target="_blank">

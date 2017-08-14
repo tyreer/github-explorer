@@ -18,7 +18,6 @@ export default function Nav () {
   )
 }
 
-
 // <li>
 //   <NavLink activeClassName='active' to='/battle'>
 //     Battle
