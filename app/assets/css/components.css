@@ -102,18 +102,6 @@
   align-items: center;
 }
 
-/*formerly .column input*/
-
-.PlayerInput__input {
-  border-radius: 3px;
-  margin: 10px 0;
-  padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.43);
-  font-size: 16px;
-  width: 50%;
-  transform: rotate(2deg);
-}
-
 .column label {
   text-align: center;
   font-size: 30px;

@@ -47,11 +47,12 @@ export default class Followers extends Component {
             <h1 className='Followers__headline'>CREEP</h1>
             <PlayerInput
               id='followed'
-              label= {this.props.label}
+              label= 'github username'
               onSubmit={this.handleSubmit}
               className='PlayerInput--single'
               buttonText='BRING THE FOLLOWERS'
               buttonClass='button--creep'
+              labelClass='screen-reader-text'
             />
           </div>
         }
@@ -85,8 +86,4 @@ export default class Followers extends Component {
 
 Followers.propTypes = {
   label: PropTypes.string.isRequired,
-}
-
-Followers.defaultProps = {
-  label: `CREEP`,
 }
