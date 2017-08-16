@@ -26,7 +26,7 @@
 .FollowerResults__topDiv {
   position: absolute;
   left: -49%;
-  top: -22%;
+  top: -6%;
   z-index: 1;
   transform: rotate(-30deg);
   color: white;
