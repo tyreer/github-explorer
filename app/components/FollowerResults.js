@@ -27,10 +27,10 @@ export default class FollowerResults extends Component {
         return (
           <div className="FollowerResults__container--inner" key={follower.data.id}>
             <div className="FollowerResults__topDiv">
-              <h2>
+              <h2 className="FollowerResults__h2">
                 {follower.data.name}
               </h2>
-              <h2>
+              <h2 className="FollowerResults__h2">
                 {follower.data.location}
               </h2>
             </div>
@@ -38,17 +38,17 @@ export default class FollowerResults extends Component {
             <h3 className="FollowerResults__h3">
               {follower.data.bio}
             </h3>
-            <a href={followedUrl} target="_blank">
-              <img className="FollowerResults__img--followingUser" src={follower.data.avatar_url} alt="Avatar of following GitHub user"/>
-            </a>
-            <a href={followedUrl} target="_blank">
-              <img className="FollowerResults__img--followedUser" src={`https://github.com/${followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
+            <a href={follower.data.html_url} target="_blank">
+              <img className="FollowerResults__img--animated FollowerResults__img--followingUser" src={follower.data.avatar_url} alt="Avatar of following GitHub user"/>
             </a>
             <a href={follower.data.html_url} target="_blank">
-              <img className="FollowerResults__img--gitHub" src={logo} alt="Github logo"/>
+              <img className="FollowerResults__img--animated FollowerResults__img--gitHub" src={logo} alt="Github logo"/>
             </a>
-            <div className="FollowerResults__bottomDiv"></div>
-          </div>
+            <a href={followedUrl} target="_blank">
+              <img className="FollowerResults__img--animated FollowerResults__img--followedUser" src={`https://github.com/${followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
+            </a>
+          <div className="FollowerResults__bottomDiv"></div>
+        </div>
         )
       })
 
