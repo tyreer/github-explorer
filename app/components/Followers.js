@@ -50,7 +50,7 @@ export default class Followers extends Component {
               label= 'github username'
               onSubmit={this.handleSubmit}
               className='PlayerInput--single'
-              buttonText='BRING THE FOLLOWERS'
+              buttonText='SEEK FOLLOWERS'
               buttonClass='button--creep'
               labelClass='screen-reader-text'
             />
