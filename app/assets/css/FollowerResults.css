@@ -162,135 +162,78 @@
 @media(min-width: 500px) {
   @keyframes leftMid {
   	0% {
-  		left: -10%;
+  		left: 0%;
+      transform: translate(-1%, 0);
   	}
     30% {
-  		left: -10%;
+  		left: 0%;
+      transform: translate(-1%, 0);
   	}
     40% {
       left: 20%;
+      transform: translate(-20%, 0);
     }
   	50% {
-  		left: -10%;
+  		left: 0%;
+      transform: translate(-1%, 0);
     }
     100% {
-  		left: -10%;
+  		left: 0%;
+      transform: translate(-1%, 0);
   	}
   }
 
   @keyframes Mid {
   	0% {
-  		left: 37%;
+  		left: 50%;
+      transform: translate(-50%, 0);
   	}
     30% {
-  		left: 37%;
+      left: 50%;
+      transform: translate(-50%, 0);
   	}
     40% {
   		left: 20%;
+      transform: translate(-20%, 0);
   	}
   	50% {
-  		left: 37%;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
   	60% {
   		left: 60%;
+      transform: translate(-60%, 0);
     }
     70% {
-  		left: 37%;
+      left: 50%;
+      transform: translate(-50%, 0);
     }
     100% {
-  		left: 37%;
+      left: 50%;
+      transform: translate(-50%, 0);
   	}
   }
 
   @keyframes midRight {
   	0% {
-  		left: 88%;
+      left: 100%;
+      transform: translate(-100%, 0);
   	}
     50% {
-      left: 88%;
+      left: 100%;
+      transform: translate(-100%, 0);
     }
   	60% {
-  		left: 60%;
+      left: 60%;
+      transform: translate(-60%, 0);
   	}
     70% {
-  		left: 88%;
+      left: 100%;
+      transform: translate(-100%, 0);
     }
     100% {
-  		left: 88%;
+      left: 100%;
+      transform: translate(-100%, 0);
   	}
   }
 }
-
-/*@media(min-width: 500px) {
-  @keyframes leftMid {
-  	0% {
-  		left: 50px;
-  	}
-    30% {
-  		left: 50px;
-  	}
-    40% {
-      left: 112.5px;
-    }
-  	50% {
-  		left: 50px;
-    }
-    70% {
-  		left: 50px;
-    }
-    100% {
-  		left: 50px;
-  	}
-  }
-
-  @keyframes Mid {
-  	0% {
-  		left: 175px;
-  	}
-    30% {
-  		left: 175px;
-  	}
-    40% {
-  		left: 112.5px;
-  	}
-  	50% {
-  		left: 175px;
-    }
-  	60% {
-  		left: 237.5px;
-    }
-    70% {
-  		left: 175px;
-    }
-    80% {
-  		left: 175px;
-  	}
-    100% {
-  		left: 175px;
-  	}
-  }
-
-  @keyframes midRight {
-  	0% {
-  		left: 300px;
-  	}
-    30% {
-      left: 300px;
-    }
-    50% {
-      left: 300px;
-    }
-  	60% {
-  		left: 237.5px;
-  	}
-    70% {
-  		left: 300px;
-    }
-    80% {
-  		left: 300px;
-  	}
-    100% {
-  		left: 300px;
-  	}
-  }
-}*/
