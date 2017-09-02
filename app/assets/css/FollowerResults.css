@@ -170,8 +170,8 @@
       transform: translate(-1%, 0);
   	}
     40% {
-      left: 20%;
-      transform: translate(-20%, 0);
+      left: 30%;
+      transform: translate(-30%, 0);
     }
   	50% {
   		left: 0%;
@@ -193,16 +193,16 @@
       transform: translate(-50%, 0);
   	}
     40% {
-  		left: 20%;
-      transform: translate(-20%, 0);
+  		left: 30%;
+      transform: translate(-30%, 0);
   	}
   	50% {
       left: 50%;
       transform: translate(-50%, 0);
     }
   	60% {
-  		left: 60%;
-      transform: translate(-60%, 0);
+  		left: 70%;
+      transform: translate(-70%, 0);
     }
     70% {
       left: 50%;
@@ -224,8 +224,8 @@
       transform: translate(-100%, 0);
     }
   	60% {
-      left: 60%;
-      transform: translate(-60%, 0);
+      left: 70%;
+      transform: translate(-70%, 0);
   	}
     70% {
       left: 100%;
