@@ -10,8 +10,8 @@
 }
 
 .FollowerResults__img {
-  width: 80vw;
-  height: 80vw;
+  width: 75vw;
+  height: 75vw;
   border-radius: 3%;
   position: relative;
   max-width: 450px;
@@ -62,39 +62,43 @@
 }
 
 .FollowerResults__h3 {
+  margin: 0;
+  left: 0;
+  right: 0;
   position: absolute;
   color: var(--color-blue);
-  margin: 0;
-  left: 104%;
-  width: 200px;
-  bottom: 0;
-  text-align: left;
+
+  @media(min-width: 500px) {
+    left: 104%;
+    width: 200px;
+    bottom: 0;
+    text-align: left;
+  }
 }
 
 .FollowerResults__img--animated {
-  bottom: -150px;
-  position: absolute;
-  width: 90px;
+  bottom: 10px;
+  position: fixed;
+  width: 70px;
 
   @media(min-width: 500px) {
+    position: absolute;
     bottom: -125px;
+    width: 90px;
   }
 }
 
 .FollowerResults__img--followingUser {
-  bottom: -105px;
   border-radius: 50%;
   animation: leftMid 10s ease-in infinite;
 }
 
 .FollowerResults__img--gitHub {
-  bottom: -105px;
   animation: Mid 10s ease-in infinite;
   z-index: 2;
 }
 
 .FollowerResults__img--followedUser {
-  bottom: -105px;
   border-radius: 50%;
   animation: midRight 10s ease-in infinite;
   z-index: 1;
@@ -105,63 +109,80 @@
 }
 
 @keyframes leftMid {
-	0% {
-		left: -10%;
-	}
-  30% {
-		left: -10%;
-	}
-  40% {
-    left: 20%;
+  0% {
+    left: 5%;
+    transform: translate(-1%, 0);
   }
-	50% {
-		left: -10%;
+  30% {
+    left: 5%;
+    transform: translate(-1%, 0);
+  }
+  40% {
+    left: 30%;
+    transform: translate(-30%, 0);
+  }
+  50% {
+    left: 5%;
+    transform: translate(-1%, 0);
   }
   100% {
-		left: -10%;
-	}
+    left: 5%;
+    transform: translate(-1%, 0);
+  }
 }
 
 @keyframes Mid {
-	0% {
-		left: 33%;
-	}
-  30% {
-		left: 33%;
-	}
-  40% {
-		left: 20%;
-	}
-	50% {
-		left: 33%;
+  0% {
+    left: 50%;
+    transform: translate(-50%, 0);
   }
-	60% {
-		left: 45%;
+  30% {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  40% {
+    left: 30%;
+    transform: translate(-30%, 0);
+  }
+  50% {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  60% {
+    left: 70%;
+    transform: translate(-70%, 0);
   }
   70% {
-		left: 33%;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
   100% {
-		left: 33%;
-	}
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
 }
 
 @keyframes midRight {
-	0% {
-		left: 75%;
-	}
-  50% {
-    left: 75%;
+  0% {
+    left: 95%;
+    transform: translate(-100%, 0);
   }
-	60% {
-		left: 45%;
-	}
+  50% {
+    left: 95%;
+    transform: translate(-100%, 0);
+  }
+  60% {
+    left: 70%;
+    transform: translate(-70%, 0);
+  }
   70% {
-		left: 75%;
+    left: 95%;
+    transform: translate(-100%, 0);
   }
   100% {
-		left: 75%;
-	}
+    left: 95%;
+    transform: translate(-100%, 0);
+  }
 }
 
 @media(min-width: 500px) {
