@@ -22,7 +22,6 @@ export default class FollowerResults extends Component {
 
     getAllFollowersData(followed.username)
     .then(function(data) {
-
       let mungedData = data.map(follower => {
         return (
           <div className="FollowerResults__container--inner" key={follower.data.id}>
@@ -45,15 +44,17 @@ export default class FollowerResults extends Component {
             <a href={followedUrl} target="_blank">
               <img className="FollowerResults__img--animated FollowerResults__img--followedUser" src={`https://github.com/${followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
             </a>
-          <div className="FollowerResults__bottomDiv"></div>
-        </div>
+            <div className="FollowerResults__bottomDiv"></div>
+          </div>
         )
       })
 
       return this.setState(
         {
           followers: mungedData,
-          displayedFollower: mungedData[0]
+          displayedFollower: mungedData[0],
+          followed: followed,
+          followedUrl: followedUrl
         }
       );
     }.bind(this));
@@ -77,11 +78,27 @@ export default class FollowerResults extends Component {
   }
 
   render() {
-    if (this.state.followers === null){
+    if (this.state.followers === null) {
       return (
       <div className='FollowerResults-container'>
          <h1>Loading</h1>
       </div>
+      )
+    } if (this.state.followers.length <= 0) {
+      return (
+        <div className="FollowerResults-container">
+          <h2 className="FollowerResults__h2">
+            OH NO
+          </h2>
+          <h2 className="FollowerResults__h2">
+            {this.state.followed.username} has no followers
+          </h2>
+          <img className="FollowerResults__img--animated FollowerResults__img--gitHub" src={logo} alt="Github logo"/>
+          <a href={this.state.followedUrl} target="_blank">
+            <img className="FollowerResults__img--animated FollowerResults__img--followedUser" src={`https://github.com/${this.state.followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
+          </a>
+          <div className="FollowerResults__bottomDiv"></div>
+        </div>
       )
     } else {
       return (
@@ -91,4 +108,4 @@ export default class FollowerResults extends Component {
       )
     }
   }
-  }
+}
