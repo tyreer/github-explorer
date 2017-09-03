@@ -1,0 +1,13 @@
+.nav {
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.nav li {
+  margin-right: 15px;
+}
+
+.nav__a--blue {
+  color: var(--color-blue);
+}

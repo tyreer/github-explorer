@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { getAllFollowersData } from '../utils/api';
@@ -93,10 +94,11 @@ export default class FollowerResults extends Component {
           <h2 className="FollowerResults__h2">
             {this.state.followed.username} has no followers
           </h2>
-          <img className="FollowerResults__img--animated FollowerResults__img--gitHub" src={logo} alt="Github logo"/>
-          <a href={this.state.followedUrl} target="_blank">
-            <img className="FollowerResults__img--animated FollowerResults__img--followedUser" src={`https://github.com/${this.state.followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
-          </a>
+          <li>
+            <NavLink activeClassName='active' to='/followers' className="nav__a--blue">
+              Try again?
+            </NavLink>
+          </li>
           <div className="FollowerResults__bottomDiv"></div>
         </div>
       )

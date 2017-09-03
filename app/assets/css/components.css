@@ -1,6 +1,7 @@
 @import url("./base.css");
 @import url("./Followers.css");
 @import url("./FollowerResults.css");
+@import url("./Nav.css");
 
 .button {
   color: #e6e6e6;
@@ -68,16 +69,6 @@
 
 .languages li {
   cursor: pointer;
-}
-
-.nav {
-  display: flex;
-  position: relative;
-  z-index: 1;
-}
-
-.nav li {
-  margin-right: 15px;
 }
 
 .active {
