@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import logo from '../assets/github-logo.png';
 
 export default function PlayerPreview (props) {
   return (
     <div className={props.className}>
+    <div className="PlayerPreview__backdrop">
+      <img className="PlayerPreview__GitHub" src={logo} alt="Github logo"/>
+    </div>
       <img
         className='avatar'
         src={props.avatar}

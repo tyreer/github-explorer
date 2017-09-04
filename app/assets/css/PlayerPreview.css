@@ -9,6 +9,59 @@
 }
 
 .PlayerPreview__username {
-  color: white;
+  color: black;
   font-size: 2.5rem;
+}
+
+.PlayerPreview__GitHub {
+  animation: headerBob 0.5s linear infinite, downUp 5s linear forwards;
+  position: fixed;
+  left:0;
+  right:0;
+  margin: auto;
+}
+
+.PlayerPreview__backdrop {
+  -webkit-backface-visibility: hidden;
+  background: white;
+  width: 100vw;
+  height: 67vh;
+  position: fixed;
+  z-index: -2;
+  animation: width 11s linear forwards;
+  display: flex;
+  align-items: end;
+  justify-content: flex-end;
+  border: 15px solid black;
+}
+
+
+@keyframes headerBob {
+	25% {
+		transform: rotate(5deg);
+	}
+	75% {
+		transform: rotate(-5deg);
+	}
+  100% {
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes downUp {
+  0% {
+    bottom: -20%
+  }
+  100% {
+    bottom: 65%
+  }
+}
+
+@keyframes width {
+  0% {
+    width:10px;
+  }
+  100% {
+    width: 2000px;
+  }
 }
