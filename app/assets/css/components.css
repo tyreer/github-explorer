@@ -2,6 +2,7 @@
 @import url("./Followers.css");
 @import url("./FollowerResults.css");
 @import url("./Nav.css");
+@import url("./PlayerPreview.css");
 
 .button {
   color: #e6e6e6;
@@ -87,13 +88,6 @@
   align-items: center;
 }
 
-.PlayerPreview {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-}
-
 .column label {
   text-align: center;
   font-size: 30px;
@@ -114,7 +108,7 @@
   width: 100%;
   text-align: center;
   max-width: 200px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .reset:hover {

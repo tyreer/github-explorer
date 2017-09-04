@@ -11,6 +11,11 @@ body {
   font-size: 16px;
 }
 
+button {
+  font-family: Josefin Sans, system-ui;
+  font-size: 1rem;
+}
+
 ul {
   padding: 0;
 }

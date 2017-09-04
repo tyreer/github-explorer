@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
@@ -63,27 +62,23 @@ export default class Followers extends Component {
               avatar={image}
               username={name}
               className='PlayerPreview'>
+              <Link
+                className='button'
+                to={{
+                   pathname: match.url + '/results',
+                   search: '?username=' + name
+                 }}>
+                  Get followers
+              </Link>
               <button
                 className='reset'
                 onClick={this.handleReset}>
                   Nah, reset
               </button>
             </PlayerPreview>
-            <Link
-              className='button'
-              to={{
-                 pathname: match.url + '/results',
-                 search: '?username=' + name
-               }}>
-                Creep
-            </Link>
           </div>
         }
       </div>
     )
   }
-}
-
-Followers.propTypes = {
-  label: PropTypes.string.isRequired,
 }
