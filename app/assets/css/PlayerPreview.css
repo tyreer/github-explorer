@@ -36,6 +36,12 @@
   border: 15px solid black;
 }
 
+.avatar__placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: red;
+}
 
 @keyframes headerBob {
 	25% {
