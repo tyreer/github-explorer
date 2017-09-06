@@ -43,13 +43,13 @@ export default class Followers extends Component {
       <div>
         {!name &&
           <div>
-            <h1 className='Followers__headline'>CREEP</h1>
+            <h1 className='Followers__headline'>Who follows...</h1>
             <PlayerInput
               id='followed'
               label= 'github username'
               onSubmit={this.handleSubmit}
               className='PlayerInput--single'
-              buttonText='SEEK FOLLOWERS'
+              buttonText='?'
               buttonClass='button--creep'
               labelClass='screen-reader-text'
             />
