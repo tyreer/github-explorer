@@ -62,13 +62,12 @@
 }
 
 .FollowerResults__h3 {
-  margin: auto;
-  left: -10vw;
+  margin: 1rem 0 0 0;
   position: absolute;
+  left: -7vw;
   color: var(--color-blue);
-  font-size: 0.9rem;
-  position: absolute;
-  width: 95vw;
+  font-size: 1rem;
+  width: 91vw;
 
   @media(min-width: 500px) {
     margin: 0;
