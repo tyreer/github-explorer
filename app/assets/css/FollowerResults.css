@@ -93,12 +93,42 @@
 
 .FollowerResults__prev {
   left: 0;
-  cursor: url('../../assets/arrow-left.svg') 10 25, auto;
+  
+  @media (--desktop) {
+    cursor: url('../../assets/arrow-left.svg') 10 25, auto;
+  }
+}
+
+.FollowerResults__prev::after {
+  content: url('../../assets/arrow-left-small.svg');
+  position: fixed;
+  top: 50vh;
+  transform: translateY(-50%);
+  left: 6px;
+
+  @media (--desktop) {
+    display: none;
+  }
 }
 
 .FollowerResults__next {
   right: 0;
-  cursor: url('../../assets/arrow-right.svg') 10 25, auto;
+
+  @media (--desktop) {
+    cursor: url('../../assets/arrow-right.svg') 10 25, auto;
+  }
+}
+
+.FollowerResults__next::after {
+  content: url('../../assets/arrow-right-small.svg');
+  position: fixed;
+  top: 50vh;
+  transform: translateY(-50%);
+  right: 6px;
+
+  @media (--desktop) {
+    display: none;
+  }
 }
 
 .FollowerResults__prev:focus,
