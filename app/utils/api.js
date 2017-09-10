@@ -53,19 +53,19 @@ function sortPlayers (players) {
   });
 }
 
+function getFollowers (username) {
+  return axios.get(`https://api.github.com/users/${username}/followers`)
+    .then(function(user) {
+      return user.data;
+    })
+}
+
 const APICallLimit = 5;
 
 function getFollowersData (follower, index) {
   if (index < APICallLimit) {
     return axios.get(`https://api.github.com/users/${follower.login}`)
   }
-}
-
-function getFollowers (username) {
-  return axios.get(`https://api.github.com/users/${username}/followers`)
-    .then(function(user) {
-      return user.data;
-    })
 }
 
 export function getAllFollowersData (username) {
