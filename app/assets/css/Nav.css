@@ -1,11 +1,11 @@
 .nav {
   display: flex;
   position: relative;
-  z-index: 1;
-}
+  z-index: 3;
 
-.nav li {
-  margin-right: 15px;
+  & a {
+    padding: 15px;
+  }
 }
 
 .nav__a--blue {

@@ -79,6 +79,33 @@
   }
 }
 
+.FollowerResults__prev,
+.FollowerResults__next {
+  position: fixed;
+  height: 70vh;
+  width: 50vw;
+  bottom: 20vh;
+  background-color: transparent;
+  border: none;
+  font-size: 0;
+  z-index: 2;
+}
+
+.FollowerResults__prev {
+  left: 0;
+  cursor: url('../../assets/arrow-left.svg') 10 25, auto;
+}
+
+.FollowerResults__next {
+  right: 0;
+  cursor: url('../../assets/arrow-right.svg') 10 25, auto;
+}
+
+.FollowerResults__prev:focus,
+.FollowerResults__next:focus {
+  outline: 0;
+}
+
 .FollowerResults__img--animated {
   bottom: 10px;
   position: fixed;
@@ -94,17 +121,18 @@
 .FollowerResults__img--followingUser {
   border-radius: 50%;
   animation: leftMid 10s ease-in infinite;
+  z-index: 4;
 }
 
 .FollowerResults__img--gitHub {
   animation: Mid 10s ease-in infinite;
-  z-index: 2;
+  z-index: 4;
 }
 
 .FollowerResults__img--followedUser {
   border-radius: 50%;
   animation: midRight 10s ease-in infinite;
-  z-index: 1;
+  z-index: 3;
 }
 
 .FollowerResults__container--inner {

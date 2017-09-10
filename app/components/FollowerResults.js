@@ -15,6 +15,7 @@ export default class FollowerResults extends Component {
       index: 0
     }
     this.nextFollower = this.nextFollower.bind(this);
+    this.prevFollower = this.prevFollower.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,8 @@ export default class FollowerResults extends Component {
           }
         return (
           <div className="FollowerResults__container--inner" key={follower.data.id}>
+            <button className="FollowerResults__prev" onClick={this.prevFollower} type="button" aria-label="Previous" role="button">Previous</button>
+            <button className="FollowerResults__next" onClick={this.nextFollower} type="button" aria-label="Next" role="button">Next</button>
             <div className="FollowerResults__topDiv">
               <h2 className="FollowerResults__h2">
                 {follower.data.name}
@@ -70,10 +73,27 @@ export default class FollowerResults extends Component {
   nextFollower() {
     let incrementIndex = this.state.index;
 
-    if (incrementIndex === (this.state.followers.length -1)) {
+    if (incrementIndex === (this.state.followers.length - 1)) {
       incrementIndex = 0;
     } else {
       incrementIndex++;
+    }
+
+    this.setState(
+      {
+        displayedFollower: this.state.followers[incrementIndex],
+        index: incrementIndex
+      }
+    );
+  }
+
+  prevFollower() {
+    let incrementIndex = this.state.index;
+
+    if (incrementIndex === 0) {
+      incrementIndex = (this.state.followers.length - 1);
+    } else {
+      incrementIndex--;
     }
 
     this.setState(
