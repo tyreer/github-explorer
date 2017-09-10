@@ -16,7 +16,16 @@ export default class FollowerResults extends Component {
     }
     this.nextFollower = this.nextFollower.bind(this);
     this.prevFollower = this.prevFollower.bind(this);
+    this.prevNextKeys = this.prevNextKeys.bind(this);
   }
+
+  componentWillMount() {
+    document.addEventListener("keydown", this.prevNextKeys);
+  };
+
+  componentWillUnmount() {
+    document.removeEventListener("keydown", this.prevNextKeys);
+  };
 
   componentDidMount() {
     const followed = queryString.parse(this.props.location.search);
@@ -25,16 +34,18 @@ export default class FollowerResults extends Component {
     getAllFollowersData(followed.username)
     .then(function(data) {
       let mungedData = data.map(follower => {
+
         let bio;
         if (follower.data.bio !== null && follower.data.bio.length >= 110 && window.innerWidth < 375) {
             bio = `${follower.data.bio.substring(0,110)}...`;
           } else {
             bio = follower.data.bio;
-          }
+          };
+
         return (
           <div className="FollowerResults__container--inner" key={follower.data.id}>
-            <button className="FollowerResults__prev" onClick={this.prevFollower} type="button" aria-label="Previous" role="button">Previous</button>
-            <button className="FollowerResults__next" onClick={this.nextFollower} type="button" aria-label="Next" role="button">Next</button>
+            <button id="prev" className="FollowerResults__prev" onClick={this.prevFollower} type="button" aria-label="Previous" role="button">Previous</button>
+            <button id="next" className="FollowerResults__next" onClick={this.nextFollower} type="button" aria-label="Next" role="button">Next</button>
             <div className="FollowerResults__topDiv">
               <h2 className="FollowerResults__h2">
                 {follower.data.name}
@@ -102,6 +113,14 @@ export default class FollowerResults extends Component {
         index: incrementIndex
       }
     );
+  }
+
+  prevNextKeys(event) {
+    if(event.which === 37) {
+      this.prevFollower();
+    } else if (event.which === 39) {
+      this.nextFollower();
+    };
   }
 
   render() {
