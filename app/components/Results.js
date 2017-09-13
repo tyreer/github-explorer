@@ -9,6 +9,7 @@ import Loading from './Loading';
 
 function Profile (props) {
   var info = props.info;
+  // console.log(info);
 
   return (
     <PlayerPreview username={info.login} avatar={info.avatar_url}>

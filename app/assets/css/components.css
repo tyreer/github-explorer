@@ -116,3 +116,33 @@
 .reset:hover {
   cursor: pointer;
 }
+
+.Famous__repo {
+  position: relative;
+
+  & span {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.Famous__repo:hover {
+  & span{
+  animation: starFly 1s infinite;
+}
+}
+
+/*https://css-tricks.com/random-numbers-css/*/
+
+@keyframes starFly {
+  0% {
+    left: 50%;
+    top: 50%;
+  }
+  100% {
+    left: 300%;
+    top: 20%;
+  }
+}
