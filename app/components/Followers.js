@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
+import { getProfile } from '../utils/api';
 
 export default class Followers extends Component {
   constructor(props) {
@@ -17,6 +18,12 @@ export default class Followers extends Component {
    }
 
    handleSubmit(id, username) {
+
+     getProfile(username)
+     .then(function(data){
+       console.log(data);
+     });
+
      this.setState(() => {
        let newState = {};
        newState['name'] = username;

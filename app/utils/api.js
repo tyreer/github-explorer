@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-function getProfile (username) {
+export function getProfile (username) {
   return axios.get(`https://api.github.com/users/${username}`)
     .then(function(user) {
       return user.data;
