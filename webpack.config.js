@@ -25,7 +25,7 @@ const config = {
           ],
         }),
       },
-      { test: /\.(png|jpg|svg)$/, use: 'url-loader' },
+      { test: /\.(png|jpg|svg|gif)$/, use: 'url-loader' },
     ]
   },
   plugins: [

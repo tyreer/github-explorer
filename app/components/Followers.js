@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 import { getProfile } from '../utils/api';
@@ -10,7 +10,8 @@ export default class Followers extends Component {
 
     this.state = {
       name: '',
-      image: null
+      image: null,
+      error: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,18 +19,26 @@ export default class Followers extends Component {
    }
 
    handleSubmit(id, username) {
+    let errorMsg = null;
 
      getProfile(username)
-     .then(function(data){
-       console.log(data);
-     });
-
-     this.setState(() => {
-       let newState = {};
-       newState['name'] = username;
-       newState['image'] = `https://github.com/${username}.png?size=200`;
-       return newState;
-     });
+      .then(data => {
+        this.setState(() => {
+          let newState = {};
+          newState['image'] = data.avatar_url;
+          newState['name'] = username;
+          return newState;
+        });
+      })
+      .catch(error => {
+        errorMsg = error.response.status;
+        this.setState(() => {
+          let newState = {};
+          newState['error'] = errorMsg;
+          newState['name'] = username;
+          return newState;
+        })
+      });
    }
 
    handleReset() {
@@ -37,6 +46,7 @@ export default class Followers extends Component {
       var newState = {};
       newState['name'] = '';
       newState['image'] = null;
+      newState['error'] = null;
       return newState;
     })
    }
@@ -45,6 +55,7 @@ export default class Followers extends Component {
     let match = this.props.match;
     let name = this.state.name;
     let image = this.state.image;
+    let error = this.state.error;
 
     return (
       <div>
@@ -60,6 +71,27 @@ export default class Followers extends Component {
               buttonClass='button--creep'
               labelClass='screen-reader-text'
             />
+          </div>
+        }
+
+        {error === 404 &&
+          <div className="FollowerResults-container">
+            <h2 className="FollowerResults__h2">
+              UH OH
+            </h2>
+            <h2 className="FollowerResults__h2">
+              {name} does not exist on GitHub...
+            </h2>
+            <li>
+              <NavLink
+                activeClassName='active'
+                to='/followers'
+                className="nav__a--blue"
+                onClick = {this.handleReset}>
+                Try again?
+              </NavLink>
+            </li>
+            <div className="FollowerResults__bottomDiv"></div>
           </div>
         }
 

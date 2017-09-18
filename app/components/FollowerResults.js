@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { getAllFollowersData } from '../utils/api';
 import logo from '../assets/github-logo.png';
+import shame from '../assets/shame-cubes.gif';
 
 
 export default class FollowerResults extends Component {
@@ -136,6 +137,7 @@ export default class FollowerResults extends Component {
           <h2 className="FollowerResults__h2">
             OH NO
           </h2>
+          <img className="FollowerResults__img" src={shame} alt='A 3D image of a shame cube decending over shamed looking young man'/>
           <h2 className="FollowerResults__h2">
             {this.state.followed.username} has no followers
           </h2>
