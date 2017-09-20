@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 
 export default function Nav () {
   return (
-    <table className='testNav' >
-      <tr className='testNav-tr'>
+    <table className='Nav' >
+      <tr className='Nav-tr'>
         <td>
           <NavLink exact activeClassName='active' to='/'>
             Home
@@ -13,7 +13,7 @@ export default function Nav () {
         <td></td>
         <td></td>
       </tr>
-      <tr className='testNav-tr'>
+      <tr className='Nav-tr'>
         <td>
           <NavLink activeClassName='active' to='/followers'>
             Followers
