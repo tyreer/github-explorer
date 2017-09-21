@@ -38,9 +38,9 @@ export default class FollowerResults extends Component {
 
         let bio;
         if (follower.data.bio !== null && follower.data.bio.length >= 110 && window.innerWidth < 375) {
-            bio = `${follower.data.bio.substring(0,110)}...`;
+            bio = `: ${follower.data.bio.substring(0,70)}...`;
           } else {
-            bio = follower.data.bio;
+            bio = `: ${follower.data.bio}`;
           };
 
         return (
@@ -51,14 +51,11 @@ export default class FollowerResults extends Component {
               <h2 className="FollowerResults__h2">
                 {follower.data.name}
               </h2>
-              <h2 className="FollowerResults__h2">
-                {follower.data.location}
-              </h2>
             </div>
             <img onClick={this.nextFollower} className="FollowerResults__img" src={follower.data.avatar_url}/>
-            <h3 className="FollowerResults__h3">
-              {bio}
-            </h3>
+            <p className="FollowerResults__p">
+                {follower.data.location}{bio}
+            </p>
             <a href={follower.data.html_url} target="_blank">
               <img className="FollowerResults__img--animated FollowerResults__img--followingUser" src={follower.data.avatar_url} alt="Avatar of following GitHub user"/>
             </a>
