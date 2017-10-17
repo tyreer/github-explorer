@@ -16,9 +16,8 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className='container'>
-          <Nav />
           <Switch>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' component={Nav} />
             <Route exact path='/battle' component={Battle} />
             <Route path='/battle/results' component={Results} />
             <Route path='/famous' component={Famous} />

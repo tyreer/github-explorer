@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Nav from './Nav';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 import { getProfile } from '../utils/api';
@@ -59,6 +60,7 @@ export default class Followers extends Component {
 
     return (
       <div>
+      <Nav />
         {!name &&
           <div>
             <h1 className='Followers__headline'>Who follows...</h1>
@@ -86,7 +88,7 @@ export default class Followers extends Component {
               <NavLink
                 activeClassName='active'
                 to='/followers'
-                className="nav__a--blue"
+                className="Nav__a--blue"
                 onClick = {this.handleReset}>
                 Try again?
               </NavLink>

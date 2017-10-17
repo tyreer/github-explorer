@@ -139,7 +139,7 @@ export default class FollowerResults extends Component {
             {this.state.followed.username} has no followers
           </h2>
           <li>
-            <NavLink activeClassName='active' to='/followers' className="nav__a--blue">
+            <NavLink activeClassName='active' to='/followers' className="Nav__a--blue">
               Try again?
             </NavLink>
           </li>

@@ -3,33 +3,31 @@ import { NavLink } from 'react-router-dom';
 
 export default function Nav () {
   return (
-    <table className='Nav' >
-      <tr className='Nav-tr'>
-        <td>
-          <NavLink exact activeClassName='active' to='/'>
-            Home
-          </NavLink>
-        </td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr className='Nav-tr'>
-        <td>
-          <NavLink activeClassName='active' to='/followers'>
-            Followers
-          </NavLink>
-        </td>
-        <td>
-          <NavLink activeClassName='active' to='/battle'>
-            Battle
-          </NavLink>
-        </td>
-        <td>
-          <NavLink activeClassName='active' to='/famous'>
-            Famous
-          </NavLink>
-        </td>
-      </tr>
-    </table>
+    <div className='Nav-container--expanded'>
+       <ul className='Nav'>
+         <li>
+           <NavLink exact activeClassName='active' to='/'>
+             Home
+           </NavLink>
+         </li>
+       </ul>
+       <ul className='Nav--sub'>
+         <li>
+           <NavLink activeClassName='active' to='/followers'>
+             Followers
+           </NavLink>
+         </li>
+         <li>
+           <NavLink activeClassName='active' to='/battle'>
+             Battle
+           </NavLink>
+         </li>
+         <li>
+           <NavLink activeClassName='active' to='/famous'>
+             Famous
+           </NavLink>
+         </li>
+       </ul>
+     </div>
   )
 }
