@@ -6,7 +6,7 @@
 }
 
 .Nav {
-  display: none;
+  /*display: none;*/
 }
 
 /*.Nav,*/
@@ -21,7 +21,7 @@
   height: 90vh;
 
   & li {
-    width: 38%;
+    width: 55%;
     border: 1px solid white;
     /*text-align: center;*/
     padding: 10px 0;
