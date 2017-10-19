@@ -60,7 +60,7 @@ export default class Followers extends Component {
 
     return (
       <div>
-      <Nav />
+      <Nav expanded='false' />
         {!name &&
           <div>
             <h1 className='Followers__headline'>Who follows...</h1>

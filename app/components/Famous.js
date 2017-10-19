@@ -10,9 +10,7 @@ const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
 
   return (
     <div>
-    <Nav
-      expanded='false'
-      />
+    <Nav expanded='false' />
       <h1>FAMOUS: {selectedLanguage}</h1>
       <ul className = 'languages'>
         {languages.map(language => {
