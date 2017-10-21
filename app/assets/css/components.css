@@ -54,12 +54,6 @@
   margin: 10px;
 }
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .container {
   max-width: 900px;
   margin: 0 auto;

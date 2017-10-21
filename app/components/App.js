@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ReactRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
 import Nav from './Nav';
-import Home from './Home';
 import Battle from './Battle';
 import Famous from './Famous';
 import Megaphone from './Megaphone';
