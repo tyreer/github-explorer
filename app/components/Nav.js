@@ -16,7 +16,7 @@ export default function Nav (props) {
          </ul>
         :
         <div className='Nav-container--expanded'>
-          <ul className='Nav--sub'>
+          <ul className='Nav--options'>
             <li>
               <NavLink activeClassName='active' to='/followers'>
                 Followers
@@ -33,6 +33,7 @@ export default function Nav (props) {
               </NavLink>
             </li>
           </ul>
+          <p className="Nav__footer">Good times with the GitHub API</p>
         </div>}
      </div>
   )

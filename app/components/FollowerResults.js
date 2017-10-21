@@ -123,7 +123,7 @@ export default class FollowerResults extends Component {
   render() {
     if (this.state.followers === null) {
       return (
-      <div className='FollowerResults-container'>
+      <div className='FollowerResults__container'>
          <h1>Loading</h1>
       </div>
       )
