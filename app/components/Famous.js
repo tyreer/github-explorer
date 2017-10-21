@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
 import Loading from './Loading';
-import Nav from './Nav';
 
 
 const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
@@ -10,7 +9,6 @@ const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
 
   return (
     <div>
-    <Nav expanded='false' />
       <h1>FAMOUS: {selectedLanguage}</h1>
       <ul className = 'languages'>
         {languages.map(language => {

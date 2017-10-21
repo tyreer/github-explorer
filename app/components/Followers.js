@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Nav from './Nav';
 import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 import { getProfile } from '../utils/api';
@@ -60,7 +59,6 @@ export default class Followers extends Component {
 
     return (
       <div>
-      <Nav expanded='false' />
         {!name &&
           <div>
             <h1 className='Followers__headline'>Who follows...</h1>

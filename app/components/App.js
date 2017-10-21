@@ -15,6 +15,8 @@ export default class App extends Component {
 
     return (
       <BrowserRouter>
+      <div>
+        <Nav expanded='false' />
         <div className='container'>
           <Switch>
             <Route exact path='/' component={Nav} />
@@ -26,6 +28,7 @@ export default class App extends Component {
             <Route render= { () => <p>Not found</p> }/>
           </Switch>
         </div>
+      </div>
       </BrowserRouter>
     )
   }

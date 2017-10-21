@@ -4,18 +4,16 @@ import PropTypes from 'prop-types';
 
 export default function Nav (props) {
   return (
-    <div>
+    <div className='Nav-container'>
       {props.expanded !== 'true'
         ?
-        <div className='Nav-container'>
-          <ul className='Nav'>
-             <li>
-               <NavLink exact activeClassName='active' to='/'>
-                 Home
-               </NavLink>
-             </li>
-           </ul>
-        </div>
+        <ul className='Nav'>
+           <li>
+             <NavLink exact activeClassName='active' to='/'>
+               Home
+             </NavLink>
+           </li>
+         </ul>
         :
         <div className='Nav-container--expanded'>
           <ul className='Nav--sub'>

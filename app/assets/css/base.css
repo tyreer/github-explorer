@@ -1,5 +1,8 @@
 :root {
   --color-blue: #32c7ff;
+
+  --base-large-margin: 40px;
+  --base-small-margin: 20px;
 }
 
 @custom-media --tablet (min-width: 450px);
