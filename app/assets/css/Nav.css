@@ -41,13 +41,24 @@
   & li {
     width: 55%;
     border: 1px solid white;
-    padding: 10px 0;
     flex-grow: 1;
+  }
+
+  & li:first-child {
+    border-bottom: none;
+  }
+
+  & li:last-child {
+    border-top: none;
   }
 
   & a {
     display: block;
-    padding: 15px 0 55px 15px;
+    padding: 25px 0 84px 15px;
+
+    @media (--tablet) {
+      padding-bottom: 120px;
+    }
   }
 }
 
@@ -62,4 +73,9 @@
   bottom: 0;
   left: 0;
   right: 0;
+
+  @media (--tablet) {
+    text-align: right;
+    padding-right: var(--base-large-margin);
+  }
 }

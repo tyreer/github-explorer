@@ -129,7 +129,7 @@ export default class FollowerResults extends Component {
       )
     } if (this.state.followers.length <= 0) {
       return (
-        <div className="FollowerResults-container">
+        <div className="FollowerResults__container">
           <h2 className="FollowerResults__h2">
             OH NO
           </h2>
@@ -146,7 +146,7 @@ export default class FollowerResults extends Component {
       )
     } else {
       return (
-        <div className='FollowerResults-container'>
+        <div className='FollowerResults__container'>
           {this.state.displayedFollower}
         </div>
       )

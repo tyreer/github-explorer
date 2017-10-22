@@ -60,7 +60,7 @@ export default class Followers extends Component {
     return (
       <div>
         {!name &&
-          <div>
+          <div className="Followers__container">
             <h1 className='Followers__headline'>Who follows...</h1>
             <PlayerInput
               id='followed'
@@ -68,14 +68,14 @@ export default class Followers extends Component {
               onSubmit={this.handleSubmit}
               className='PlayerInput--single'
               buttonText='?'
-              buttonClass='button--creep'
+              buttonClass='button--followers'
               labelClass='screen-reader-text'
             />
           </div>
         }
 
         {error === 404 &&
-          <div className="FollowerResults-container">
+          <div className="FollowerResults__container">
             <h2 className="FollowerResults__h2">
               UH OH
             </h2>
