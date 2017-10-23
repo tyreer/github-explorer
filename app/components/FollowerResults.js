@@ -34,11 +34,10 @@ export default class FollowerResults extends Component {
     getAllFollowersData(followed.username)
     .then(function(data) {
       let mungedData = data.map(follower => {
-
         let bio;
         if (follower.data.bio !== null && follower.data.bio.length >= 110 && window.innerWidth < 375) {
             bio = `: ${follower.data.bio.substring(0,70)}...`;
-          } else {
+          } else if (follower.data.bio !== null) {
             bio = `: ${follower.data.bio}`;
           };
 
@@ -53,7 +52,7 @@ export default class FollowerResults extends Component {
             </div>
             <img onClick={this.nextFollower} className="FollowerResults__img" src={follower.data.avatar_url}/>
             <p className="FollowerResults__p">
-                {follower.data.location}{bio}
+                {follower.data.location} {bio}
             </p>
             <a href={follower.data.html_url} target="_blank">
               <img className="FollowerResults__img--animated FollowerResults__img--followingUser" src={follower.data.avatar_url} alt="Avatar of following GitHub user"/>
