@@ -61,7 +61,7 @@ export default class Followers extends Component {
       <div>
         {!name &&
           <div className="Followers__container">
-            <h1 className='Followers__headline'>Who follows...</h1>
+            <h2 className='Followers__headline'>Who follows...</h2>
             <PlayerInput
               id='followed'
               label= 'github username'
@@ -80,7 +80,7 @@ export default class Followers extends Component {
               UH OH
             </h2>
             <h2 className="FollowerResults__h2">
-              {name} does not exist on GitHub...
+              <span>{name}</span> does not exist on GitHub...
             </h2>
             <li>
               <NavLink

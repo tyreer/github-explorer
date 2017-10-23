@@ -3,7 +3,6 @@ import { ReactRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
 import Nav from './Nav';
 import Battle from './Battle';
 import Famous from './Famous';
-import Megaphone from './Megaphone';
 import Results from './Results';
 import Followers from './Followers';
 import FollowerResults from './FollowerResults';
@@ -15,7 +14,7 @@ export default class App extends Component {
     return (
       <BrowserRouter>
       <div>
-        <Nav expanded='false' />
+        <Nav expanded={false} />
         <div className='container'>
           <Switch>
             <Route exact path='/' component={Nav} />

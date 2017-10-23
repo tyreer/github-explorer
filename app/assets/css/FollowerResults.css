@@ -64,9 +64,12 @@
   font-size: 1.2rem;
   margin: 0.5rem;
 
+  & span {
+    font-style: italic;
+  }
+
   @media (--tablet) {
     font-size: 2rem;
-    margin: inherit;
   }
 }
 
