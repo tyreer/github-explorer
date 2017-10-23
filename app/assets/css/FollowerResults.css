@@ -180,11 +180,11 @@
 
 @keyframes leftMid {
   0% {
-    left: 5%;
+    left: 13%;
     transform: translate(-1%, 0);
   }
   30% {
-    left: 5%;
+    left: 13%;
     transform: translate(-1%, 0);
   }
   40% {
@@ -192,11 +192,11 @@
     transform: translate(-30%, 0);
   }
   50% {
-    left: 5%;
+    left: 13%;
     transform: translate(-1%, 0);
   }
   100% {
-    left: 5%;
+    left: 13%;
     transform: translate(-1%, 0);
   }
 }
@@ -234,11 +234,11 @@
 
 @keyframes midRight {
   0% {
-    left: 95%;
+    left: 87%;
     transform: translate(-100%, 0);
   }
   50% {
-    left: 95%;
+    left: 87%;
     transform: translate(-100%, 0);
   }
   60% {
@@ -246,11 +246,11 @@
     transform: translate(-70%, 0);
   }
   70% {
-    left: 95%;
+    left: 87%;
     transform: translate(-100%, 0);
   }
   100% {
-    left: 95%;
+    left: 87%;
     transform: translate(-100%, 0);
   }
 }
