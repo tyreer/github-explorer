@@ -1,0 +1,35 @@
+.PlayerInput__container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
+}
+
+.PlayerInput--single {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+
+    @media (--tablet) {
+      justify-content: center;
+    }
+}
+
+.PlayerInput__input {
+  border-radius: 3px;
+  margin: 0 0 var(--base-large-margin);
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.43);
+  font-size: 16px;
+  width: 75%;
+
+  @media (--tablet) {
+    width: 50%;
+  }
+}
+
+.PlayerInput__input::placeholder {
+  font-family: Josefin Sans, system-ui;
+}

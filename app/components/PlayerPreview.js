@@ -27,5 +27,5 @@ PlayerPreview.propTypes = {
 };
 
 PlayerPreview.defaultProps = {
-  className: 'column',
+  className: 'PlayerPreview__container',
 }

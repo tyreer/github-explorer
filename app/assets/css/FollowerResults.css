@@ -153,6 +153,7 @@
   bottom: 10px;
   position: fixed;
   width: 70px;
+  border-radius: 50%;
 
   @media (--tablet) {
     position: absolute;
@@ -161,8 +162,8 @@
   }
 }
 
+
 .FollowerResults__img--followingUser {
-  border-radius: 50%;
   animation: leftMid 10s ease-in infinite;
   z-index: 4;
 }
@@ -173,7 +174,6 @@
 }
 
 .FollowerResults__img--followedUser {
-  border-radius: 50%;
   animation: midRight 10s ease-in infinite;
   z-index: 3;
 }

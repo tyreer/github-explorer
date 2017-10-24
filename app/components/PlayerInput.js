@@ -66,7 +66,7 @@ PlayerInput.propTypes = {
 
 PlayerInput.defaultProps = {
   label: 'Username',
-  className: 'column',
+  className: 'PlayerInput__container',
   buttonText: 'Submit',
   buttonClass: 'button',
   labelClass: 'header'

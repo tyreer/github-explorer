@@ -46,7 +46,7 @@ export default class Battle extends Component {
 
     return (
       <div>
-        <div className='row'>
+        <div className='Battle__container'>
 
           {!playerOneName &&
           <PlayerInput

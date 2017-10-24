@@ -2,7 +2,9 @@
 @import url("./Followers.css");
 @import url("./FollowerResults.css");
 @import url("./Nav.css");
+@import url("./PlayerInput.css");
 @import url("./PlayerPreview.css");
+@import url("./Battles.css");
 
 .button {
   color: #e6e6e6;
@@ -70,18 +72,6 @@
 
 .active {
   font-weight: bold;
-}
-
-.row {
-  display: flex;
-  justify-content: space-around;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  align-items: center;
 }
 
 .column label {
