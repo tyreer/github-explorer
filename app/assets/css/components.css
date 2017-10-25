@@ -57,8 +57,13 @@
 }
 
 .container {
-  max-width: 900px;
-  margin: 0 auto;
+  /*max-width: 900px;*/
+  /*margin: 0 auto;*/
+
+  /*ADDED*/
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
 }
 
 .languages {

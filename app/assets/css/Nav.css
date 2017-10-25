@@ -1,12 +1,22 @@
 .Nav-container {
-  margin: var(--base-small-margin);
+  margin: 10px var(--base-small-margin) 5px;
+
+/*ADDED*/
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .Nav-container--expanded {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
+
+
+  /*ADDED*/
+  /*height: 75vh;*/
+  align-self: center;
+  flex: 1;
 }
 
 .Nav {
@@ -22,6 +32,9 @@
     border-bottom: 1px solid white;
     padding: 5px 0;
     flex-grow: 1;
+
+    /*ADDED*/
+    width: 50vw;
   }
 
   & a {
@@ -37,11 +50,12 @@
   position: relative;
   z-index: 3;
   height: 87%;
+  flex: 1;
 
   & li {
-    width: 55%;
+    width: 55vw;
     border: 1px solid white;
-    flex-grow: 1;
+    flex: 1;
   }
 
   & li:first-child {
@@ -54,7 +68,9 @@
 
   & a {
     display: block;
-    padding: 25px 0 84px 15px;
+
+    /*ADDED*/
+    padding: 25px 0 70px 15px;
 
     @media (--tablet) {
       padding-bottom: 120px;

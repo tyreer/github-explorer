@@ -8,11 +8,15 @@
 @custom-media --tablet (min-width: 630px);
 @custom-media --desktop (min-width: 769px);
 
+html {
+  overflow: hidden;
+}
+
 body {
   background: var(--color-blue);
   font-family: Josefin Sans, system-ui;
-  overflow: hidden;
   font-size: 16px;
+  height: 100vh;
 }
 
 button {
