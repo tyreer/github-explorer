@@ -1,7 +1,5 @@
 .Nav-container {
   margin: 10px var(--base-small-margin) 5px;
-
-/*ADDED*/
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -11,10 +9,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-
-  /*ADDED*/
-  /*height: 75vh;*/
   align-self: center;
   flex: 1;
 }
@@ -32,8 +26,6 @@
     border-bottom: 1px solid white;
     padding: 5px 0;
     flex-grow: 1;
-
-    /*ADDED*/
     width: 50vw;
   }
 
@@ -68,8 +60,6 @@
 
   & a {
     display: block;
-
-    /*ADDED*/
     padding: 25px 0 70px 15px;
 
     @media (--tablet) {
