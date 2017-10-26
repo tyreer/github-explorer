@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  /*height: 100vh;*/
+  height: 75vh;
   align-items: center;
   justify-content: center;
-  margin-top: -3rem;
+  /*margin-top: -3rem;*/
 }
 
 .PlayerPreview__container {
@@ -13,6 +14,7 @@
   flex-direction: column;
   width: 500px;
   align-items: center;
+  position: relative;
 }
 
 .PlayerPreview__username {
@@ -22,18 +24,20 @@
 
 .PlayerPreview__GitHub {
   animation: headerBob 0.5s linear infinite;
-  position: fixed;
+  /*position: fixed;*/
   left:0;
   right:0;
   margin: auto;
-  bottom: 58%;
+  /*bottom: 58%;*/
+  position: absolute;
+  top: -20px;
 }
 
 .PlayerPreview__backdrop {
   -webkit-backface-visibility: hidden;
   background: white;
   width: 100vw;
-  height: 67vh;
+  height: 55vh;
   position: fixed;
   z-index: -2;
   animation: box-width 0.5s linear forwards;
