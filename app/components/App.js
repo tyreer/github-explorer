@@ -9,6 +9,14 @@ import FollowerResults from './FollowerResults';
 
 export default class App extends Component {
 
+  componentDidMount() {
+    document.ontouchmove = (event) => { event.preventDefault(); }
+  }
+
+  componentWillUnmount() {
+    document.ontouchmove = (event) => true;
+  };
+
   render() {
 
     return (
