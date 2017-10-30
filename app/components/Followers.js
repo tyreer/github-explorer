@@ -102,7 +102,7 @@ export default class Followers extends Component {
               username={name}
               className='PlayerPreview'>
               <Link
-                className='button'
+                className='PlayerPreview__button'
                 to={{
                    pathname: match.url + '/results',
                    search: '?username=' + name
@@ -110,9 +110,9 @@ export default class Followers extends Component {
                   Get followers
               </Link>
               <button
-                className='reset'
+                className='PlayerPreview__button--reset'
                 onClick={this.handleReset}>
-                  Nah, reset
+                  Reset
               </button>
             </PlayerPreview>
           </div>
