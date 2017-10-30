@@ -20,10 +20,12 @@
 .PlayerInput__input {
   border-radius: 3px;
   margin: 0 0 var(--base-large-margin);
-  padding: 10px;
+  height: 40px;
+  padding-left: 10px;
   border: 1px solid rgba(0, 0, 0, 0.43);
   font-size: 16px;
   width: 75%;
+  max-width: 400px;
 
   @media (--tablet) {
     width: 50%;

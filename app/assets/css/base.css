@@ -8,15 +8,10 @@
 @custom-media --tablet (min-width: 630px);
 @custom-media --desktop (min-width: 769px);
 
-html {
-  overflow: hidden;
-}
-
 body {
   background: var(--color-blue);
   font-family: Josefin Sans, system-ui;
   font-size: 16px;
-  /*height: 100vh;*/
 }
 
 button {
@@ -35,7 +30,6 @@ li {
 a {
   text-decoration: none;
   color: white;
-  -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
@@ -44,6 +38,14 @@ h1 {
   @media (--tablet) {
     font-size: 2rem;
   }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
 }
 
 /* Positions input labels out of view while remaining accessible to screen readers */
