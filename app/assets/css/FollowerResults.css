@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin-top: -80px;
+  /*margin-top: -80px;*/
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -11,8 +11,8 @@
 
 .FollowerResults__img,
 .FollowerResults__container--inner {
-  width: 75vw;
-  height: 75vw;
+  width: 70vw;
+  height: 70vw;
   border-radius: 3%;
   position: relative;
   max-width: 350px;
@@ -51,7 +51,7 @@
 
 .FollowerResults__bottomDiv {
   position: fixed;
-  height: 50vh;
+  height: 44vh;
   width: 100vw;
   bottom: 0;
   left: 0;
@@ -115,7 +115,7 @@
 .FollowerResults__prev::after {
   content: url('../../assets/arrow-left-small.svg');
   position: fixed;
-  top: 50vh;
+  top: 50%;
   transform: translateY(-50%);
   left: 6px;
 
@@ -135,7 +135,7 @@
 .FollowerResults__next::after {
   content: url('../../assets/arrow-right-small.svg');
   position: fixed;
-  top: 50vh;
+  top: 50%;
   transform: translateY(-50%);
   right: 6px;
 

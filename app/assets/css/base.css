@@ -35,6 +35,7 @@ li {
 a {
   text-decoration: none;
   color: white;
+  -webkit-tap-highlight-color: transparent;
 }
 
 h1 {
