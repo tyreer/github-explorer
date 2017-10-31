@@ -5,8 +5,8 @@ import logo from '../assets/github-logo.png';
 export default function PlayerPreview (props) {
 
   return (
-    <div className={props.className}>
-      <div className="PlayerPreview__backdrop">
+    <div className={props.containerClass}>
+      <div className={props.backdropClass}>
         <img className="PlayerPreview__GitHub" src={logo} alt="Github logo"/>
       </div>
       <img
@@ -23,9 +23,11 @@ export default function PlayerPreview (props) {
 PlayerPreview.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
-  className: PropTypes.string,
+  containerClass: PropTypes.string,
+  backdropClass: PropTypes.string,
 };
 
 PlayerPreview.defaultProps = {
-  className: 'PlayerPreview__container',
+  containerClass: 'PlayerPreview__container',
+  backdropClass: 'PlayerPreview__backdrop',
 }

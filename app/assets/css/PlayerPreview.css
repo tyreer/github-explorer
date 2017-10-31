@@ -1,4 +1,4 @@
-.PlayerPreview {
+.PlayerPreview__container {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -6,6 +6,7 @@
   height: 75vh;
   align-items: center;
   justify-content: center;
+  position: relative;
   /*margin-top: -3rem;*/
 
   @media(--desktop) {
@@ -13,13 +14,13 @@
   }
 }
 
-.PlayerPreview__container {
+/*.PlayerPreview__container {
   display: flex;
-  flex-direction: column;
-  width: 500px;
-  align-items: center;
+  flex-direction: column;*/
+  /*width: 500px;*/
+  /*align-items: center;
   position: relative;
-}
+}*/
 
 .PlayerPreview__username {
   color: black;
@@ -41,7 +42,8 @@
   }
 }
 
-.PlayerPreview__backdrop {
+.PlayerPreview__backdrop,
+.PlayerPreview__backdrop--battle {
   -webkit-backface-visibility: hidden;
   background: white;
   width: 100vw;
@@ -53,6 +55,10 @@
   align-items: end;
   justify-content: flex-end;
   border: 8px solid black;
+}
+
+.PlayerPreview__backdrop--battle {
+  height: 30vh;
 }
 
 .avatar__placeholder {

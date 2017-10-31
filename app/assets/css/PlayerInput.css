@@ -1,11 +1,12 @@
 .PlayerInput__container {
   display: flex;
   flex-direction: column;
-  width: 500px;
+  /*width: 500px;*/
   align-items: center;
 }
 
-.PlayerInput--single {
+.PlayerInput--single,
+.PlayerInput--battle {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -15,12 +16,17 @@
     @media (--tablet) {
       justify-content: center;
     }
+
+    & label {
+      margin-bottom: var(--base-large-margin);
+    }
 }
 
 .PlayerInput__input {
   border-radius: 3px;
   margin: 0 0 var(--base-large-margin);
-  height: 40px;
+  height: 45px;
+  line-height: 45px;
   padding-left: 10px;
   border: 1px solid rgba(0, 0, 0, 0.43);
   font-size: 16px;

@@ -7,7 +7,7 @@
 
 .Followers__headline {
   font-size: 30px;
-  margin: 0px 0 var(--base-large-margin);
+  margin: 0 0 var(--base-large-margin);
   color: white;
   text-align: center;
 
@@ -16,7 +16,7 @@
   }
 }
 
-.button--followers {
+.Followers__button {
   transition: all 0.5s;
   border: 4px white solid;
   color: white;

@@ -52,13 +52,16 @@ export default class Battle extends Component {
           <PlayerInput
             id='playerOne'
             label='Player One'
+            className='PlayerInput--battle'
+            buttonClass='Battle__button'
             onSubmit={this.handleSubmit}
           />}
 
           {playerOneImage !== null &&
             <PlayerPreview
               avatar={playerOneImage}
-              username={playerOneName}>
+              username={playerOneName}
+              backdropClass='PlayerPreview__backdrop--battle'>
                 <button
                   className='reset'
                   onClick={this.handleReset.bind(this, 'playerOne')}>
@@ -70,13 +73,16 @@ export default class Battle extends Component {
           <PlayerInput
             id='playerTwo'
             label='Player Two'
+            className='PlayerInput--battle'
+            buttonClass='Battle__button'
             onSubmit={this.handleSubmit}
           />}
 
           {playerTwoImage !== null &&
             <PlayerPreview
              avatar={playerTwoImage}
-             username={playerTwoName}>
+             username={playerTwoName}
+             backdropClass='PlayerPreview__backdrop--battle'>
                <button
                  className='reset'
                  onClick={this.handleReset.bind(this, 'playerTwo')}>

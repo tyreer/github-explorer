@@ -4,7 +4,7 @@
 @import url("./Nav.css");
 @import url("./PlayerInput.css");
 @import url("./PlayerPreview.css");
-@import url("./Battles.css");
+@import url("./Battle.css");
 
 .avatar {
   width: 150px;

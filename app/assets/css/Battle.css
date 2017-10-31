@@ -1,0 +1,24 @@
+/*formerly row in battle*/
+
+.Battle__container {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+
+  @media(--desktop) {
+    flex-direction: row;
+  }
+}
+
+.Battle__button {
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  /*font-size: 16px;*/
+  width: 175px;
+  /*text-align: center;*/
+  /*display: block;*/
+  padding: 15px 0;
+  margin: 10px auto;
+}

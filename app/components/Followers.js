@@ -68,7 +68,7 @@ export default class Followers extends Component {
               onSubmit={this.handleSubmit}
               className='PlayerInput--single'
               buttonText='?'
-              buttonClass='button--followers'
+              buttonClass='Followers__button'
               labelClass='screen-reader-text'
             />
           </div>
@@ -99,8 +99,7 @@ export default class Followers extends Component {
           <div>
             <PlayerPreview
               avatar={image}
-              username={name}
-              className='PlayerPreview'>
+              username={name}>
               <Link
                 className='PlayerPreview__button'
                 to={{

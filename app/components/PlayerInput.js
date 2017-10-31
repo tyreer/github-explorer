@@ -68,6 +68,5 @@ PlayerInput.defaultProps = {
   label: 'Username',
   className: 'PlayerInput__container',
   buttonText: 'Submit',
-  buttonClass: 'button',
   labelClass: 'header'
 }
