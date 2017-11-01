@@ -63,7 +63,7 @@ export default class Battle extends Component {
               username={playerOneName}
               backdropClass='PlayerPreview__backdrop--battle'>
                 <button
-                  className='reset'
+                  className='PlayerPreview__button--reset'
                   onClick={this.handleReset.bind(this, 'playerOne')}>
                     Reset
                 </button>
@@ -84,7 +84,7 @@ export default class Battle extends Component {
              username={playerTwoName}
              backdropClass='PlayerPreview__backdrop--battle'>
                <button
-                 className='reset'
+                 className='PlayerPreview__button--reset'
                  onClick={this.handleReset.bind(this, 'playerTwo')}>
                    Reset
                </button>
@@ -93,7 +93,7 @@ export default class Battle extends Component {
 
         {playerOneImage && playerTwoImage &&
           <Link
-            className='button'
+            className='PlayerPreview__button'
             to={{
                pathname: match.url + '/results',
                search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName

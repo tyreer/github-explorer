@@ -1,13 +1,49 @@
 /*formerly row in battle*/
 
 .Battle__container {
-  height: 80vh;
+  height: 65vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  /*border: 1px solid;*/
 
   @media(--desktop) {
     flex-direction: row;
+  }
+
+  & .avatar {
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+  }
+
+  & .PlayerPreview__container {
+    height: unset;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  & .PlayerPreview__backdrop--battle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  & .PlayerPreview__button--reset {
+    max-width: 118px;
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+  }
+
+  & .PlayerPreview__username {
+    margin: 10px 0;
+    font-size: 2.2rem;
+  }
+
+  & .PlayerPreview__GitHub {
+    display: none;
   }
 }
 

@@ -16,10 +16,24 @@
     @media (--tablet) {
       justify-content: center;
     }
+}
 
-    & label {
-      margin-bottom: var(--base-large-margin);
-    }
+.PlayerInput--single {
+
+  & label {
+    margin-bottom: var(--base-large-margin);
+  }
+}
+
+.PlayerInput--battle {
+
+  & label {
+    margin-bottom: var(--base-small-margin);
+  }
+
+  & .PlayerInput__input {
+    margin: 0 0 var(--base-small-margin);
+  }
 }
 
 .PlayerInput__input {
