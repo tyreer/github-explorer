@@ -12,6 +12,7 @@ function Profile (props) {
 
   return (
     <PlayerPreview username={info.login} avatar={info.avatar_url}>
+      {props.children}
       <ul className='space-list-items'>
         {info.name && <li>{info.name}</li>}
         {info.location && <li>{info.location}</li>}
@@ -32,9 +33,10 @@ Profile.propTypes = {
 function Player (props) {
   return (
     <div>
-      <h2 className='header'>{props.label}</h2>
-      <h3 style={{textAlign: 'center'}}>Score: {props.score}</h3>
-      <Profile info={props.profile} />
+      <Profile info={props.profile}>
+        <h2 className='header'>{props.label}</h2>
+        <h3 style={{textAlign: 'center'}}>Score: {props.score}</h3>
+      </Profile>
     </div>
   )
 }

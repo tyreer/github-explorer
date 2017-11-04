@@ -17,16 +17,8 @@
   position: relative;
 }
 
-/*.avatar::after {
-  content: url(../github-logo.png);
-  content: '';
-  width: 200px;
-  height: 200px;
-  background-color: red;
-}*/
-
 .space-list-items {
-  margin-bottom: 7px;
+  margin: 0 auto 0 var(--base-small-margin);
 }
 
 .famous-list {
@@ -79,6 +71,8 @@
   text-align: center;
   font-size: 30px;
   font-weight: 200;
+  margin: 0;
+  color: black;
 }
 
 .Famous__repo {

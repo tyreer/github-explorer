@@ -5,7 +5,6 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  /*border: 1px solid;*/
 
   @media(--desktop) {
     flex-direction: row;
@@ -19,9 +18,9 @@
   }
 
   & .PlayerPreview__container {
-    height: unset;
     flex-direction: row;
     justify-content: space-around;
+    padding: 25px 0;
   }
 
   & .PlayerPreview__backdrop--battle {
@@ -33,7 +32,7 @@
   & .PlayerPreview__button--reset {
     max-width: 118px;
     position: absolute;
-    bottom: -15px;
+    bottom: 0;
     right: 20px;
   }
 
