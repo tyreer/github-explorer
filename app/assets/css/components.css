@@ -13,7 +13,17 @@
   min-height: 150px;
   border-radius: 50%;
   background-color: whitesmoke;
+  z-index: 2;
+  position: relative;
 }
+
+/*.avatar::after {
+  content: url(../github-logo.png);
+  content: '';
+  width: 200px;
+  height: 200px;
+  background-color: red;
+}*/
 
 .space-list-items {
   margin-bottom: 7px;

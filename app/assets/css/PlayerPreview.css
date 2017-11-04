@@ -29,17 +29,12 @@
 
 .PlayerPreview__GitHub {
   animation: headerBob 0.5s linear infinite;
-  /*position: fixed;*/
   left:0;
   right:0;
   margin: auto;
-  /*bottom: 58%;*/
   position: absolute;
-  top: -25px;
-
-  @media(--desktop) {
-    top: 0;
-  }
+  top: -35px;
+  z-index: 1;
 }
 
 .PlayerPreview__backdrop,
@@ -59,6 +54,10 @@
 
 .PlayerPreview__backdrop--battle {
   height: 25vh;
+}
+
+.PlayerPreview__avatarWrapper {
+  position: relative;
 }
 
 .avatar__placeholder {

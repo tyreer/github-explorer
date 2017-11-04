@@ -6,14 +6,15 @@ export default function PlayerPreview (props) {
 
   return (
     <div className={props.containerClass}>
-      <div className={props.backdropClass}>
+      <div className={props.backdropClass}></div>
+      <div className="PlayerPreview__avatarWrapper">
         <img className="PlayerPreview__GitHub" src={logo} alt="Github logo"/>
+        <img
+          className='avatar'
+          src={props.avatar}
+          alt={'Avatar for ' + props.username}
+        />
       </div>
-      <img
-        className='avatar'
-        src={props.avatar}
-        alt={'Avatar for ' + props.username}
-      />
       <h2 className='PlayerPreview__username'>{props.username}</h2>
       {props.children}
     </div>
