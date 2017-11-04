@@ -104,7 +104,7 @@ export default class Results extends Component {
    }
 
     return (
-      <div className='row'>
+      <div>
        <Player
          label='Winner'
          score={winner.score}

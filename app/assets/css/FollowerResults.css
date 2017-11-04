@@ -1,12 +1,15 @@
 .FollowerResults__container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  /*margin-top: -80px;*/
+  height: 88%;
   justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
+
+  @media (--tablet) {
+    height: 100%;
+  }
 }
 
 .FollowerResults__img,

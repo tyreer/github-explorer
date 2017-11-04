@@ -15,7 +15,8 @@
   margin: 0 auto var(--base-large-margin);
 
   @media(--desktop) {
-    height: 90vh;
+    margin: var(--base-large-margin) auto;
+    max-width: 500px;
   }
 }
 
@@ -41,25 +42,6 @@
   top: -35px;
   z-index: 1;
 }
-
-/*.PlayerPreview__backdrop,
-.PlayerPreview__backdrop--battle {
-  -webkit-backface-visibility: hidden;
-  background: white;
-  width: 100vw;
-  height: 65vh;
-  position: fixed;
-  z-index: -2;
-  animation: box-width 0.5s linear forwards;
-  display: flex;
-  align-items: end;
-  justify-content: flex-end;
-  border: 8px solid black;
-}
-
-.PlayerPreview__backdrop--battle {
-  height: 25vh;
-}*/
 
 .PlayerPreview__avatarWrapper {
   position: relative;
@@ -141,13 +123,13 @@
   }
 }
 
-@media (--tablet) {
+/*@media (--tablet) {
   @keyframes box-width {
     0% {
       width: 0;
     }
     100% {
-      width: 67vh;
+      width: 40vw;
     }
   }
-}
+}*/

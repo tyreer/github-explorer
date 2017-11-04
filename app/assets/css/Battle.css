@@ -5,6 +5,8 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  max-width: 900px;
+  margin: auto;
 
   @media(--desktop) {
     flex-direction: row;
@@ -15,18 +17,17 @@
     height: 120px;
     min-width: 120px;
     min-height: 120px;
+
+    @media(--desktop) {
+      width: 175px;
+      height: 175px;
+    }
   }
 
   & .PlayerPreview__container {
     flex-direction: row;
     justify-content: space-around;
     padding: 25px 0;
-  }
-
-  & .PlayerPreview__backdrop--battle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   & .PlayerPreview__button--reset {

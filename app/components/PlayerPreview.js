@@ -6,7 +6,6 @@ export default function PlayerPreview (props) {
 
   return (
     <div className={props.containerClass}>
-      <div className={props.backdropClass}></div>
       <div className="PlayerPreview__avatarWrapper">
         <img className="PlayerPreview__GitHub" src={logo} alt="Github logo"/>
         <img

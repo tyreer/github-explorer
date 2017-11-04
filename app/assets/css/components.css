@@ -46,6 +46,11 @@
   @media (--tablet) {
     height: 85vh;
   }
+
+  /*@media (--desktop) {
+    height: 85vh;
+    justify-content: center;
+  }*/
 }
 
 .languages {
