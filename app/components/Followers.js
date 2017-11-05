@@ -4,6 +4,7 @@ import PlayerInput from './PlayerInput';
 import PlayerPreview from './PlayerPreview';
 import { getProfile } from '../utils/api';
 
+
 export default class Followers extends Component {
   constructor(props) {
     super(props);

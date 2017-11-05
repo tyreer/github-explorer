@@ -5,6 +5,7 @@
 @import url("./PlayerInput.css");
 @import url("./PlayerPreview.css");
 @import url("./Battle.css");
+@import url("./Famous.css");
 
 .avatar {
   width: 150px;
@@ -17,9 +18,9 @@
   position: relative;
 }
 
-.space-list-items {
+/*.space-list-items {
   margin: 0 auto 0 var(--base-small-margin);
-}
+}*/
 
 .famous-list {
   display: flex;
@@ -53,15 +54,6 @@
   }*/
 }
 
-.languages {
-  display: flex;
-  justify-content: space-around;
-}
-
-.languages li {
-  cursor: pointer;
-}
-
 .active {
   font-weight: bold;
 }
@@ -78,35 +70,4 @@
   font-weight: 200;
   margin: 0;
   color: black;
-}
-
-.Famous__repo {
-  position: relative;
-
-  & span {
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    top: 50%;
-  }
-}
-
-.Famous__repo:hover {
-  & span{
-  animation: starFly 1s infinite;
-}
-}
-
-/*https://css-tricks.com/random-numbers-css/*/
-/*https://api.github.com/search/users?q=ffffggggllll*/
-
-@keyframes starFly {
-  0% {
-    left: 50%;
-    top: 50%;
-  }
-  100% {
-    left: 300%;
-    top: 20%;
-  }
 }

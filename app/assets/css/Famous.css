@@ -1,0 +1,14 @@
+.Famous__header {
+  text-align: center;
+}
+
+.Famous__languages {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  & li {
+    cursor: pointer;
+    padding: 20px;
+  }
+}
