@@ -22,21 +22,6 @@
   margin: 0 auto 0 var(--base-small-margin);
 }*/
 
-.famous-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.popular-item {
-  margin: 20px;
-  text-align: center;
-}
-
-.popular-rank {
-  font-size: 20px;
-  margin: 10px;
-}
 
 .container {
   /*max-width: 900px;*/
@@ -54,9 +39,9 @@
   }*/
 }
 
-.active {
+/*.active {
   font-weight: bold;
-}
+}*/
 
 .column label {
   text-align: center;

@@ -12,3 +12,19 @@
     padding: 20px;
   }
 }
+
+.Famous__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Famous__repo-listing {
+  margin: 20px;
+  text-align: center;
+}
+
+.Famous__rank {
+  font-size: 20px;
+  margin: 10px;
+}

@@ -29,13 +29,13 @@ export default class Battle extends Component {
   }
 
   handleReset(id) {
-   this.setState(() => {
-     var newState = {};
-     newState[id + 'Name'] = '';
-     newState[id + 'Image'] = null;
-     return newState;
-   })
- }
+    this.setState(() => {
+      let newState = {};
+      newState[id + 'Name'] = '';
+      newState[id + 'Image'] = null;
+      return newState;
+    })
+  }
 
   render() {
     let match = this.props.match;
@@ -49,13 +49,14 @@ export default class Battle extends Component {
         <div className='Battle__container'>
 
           {!playerOneName &&
-          <PlayerInput
-            id='playerOne'
-            label='Player One'
-            className='PlayerInput--battle'
-            buttonClass='Battle__button'
-            onSubmit={this.handleSubmit}
-          />}
+            <PlayerInput
+              id='playerOne'
+              label='Player One'
+              className='PlayerInput--battle'
+              buttonClass='Battle__button'
+              onSubmit={this.handleSubmit}
+            />
+          }
 
           {playerOneImage !== null &&
             <PlayerPreview
@@ -67,16 +68,18 @@ export default class Battle extends Component {
                   onClick={this.handleReset.bind(this, 'playerOne')}>
                     Reset
                 </button>
-            </PlayerPreview>}
+            </PlayerPreview>
+          }
 
           {!playerTwoName &&
-          <PlayerInput
-            id='playerTwo'
-            label='Player Two'
-            className='PlayerInput--battle'
-            buttonClass='Battle__button'
-            onSubmit={this.handleSubmit}
-          />}
+            <PlayerInput
+              id='playerTwo'
+              label='Player Two'
+              className='PlayerInput--battle'
+              buttonClass='Battle__button'
+              onSubmit={this.handleSubmit}
+            />
+          }
 
           {playerTwoImage !== null &&
             <PlayerPreview
@@ -88,7 +91,8 @@ export default class Battle extends Component {
                  onClick={this.handleReset.bind(this, 'playerTwo')}>
                    Reset
                </button>
-            </PlayerPreview>}
+            </PlayerPreview>
+          }
         </div>
 
         {playerOneImage && playerTwoImage &&
@@ -99,8 +103,13 @@ export default class Battle extends Component {
                search: '?playerOneName=' + playerOneName + '&playerTwoName=' + playerTwoName
              }}>
               Battle
-          </Link>}
+          </Link>
+        }
       </div>
     )
   }
+}
+
+Battle.propTypes = {
+  match: PropTypes.object,
 }

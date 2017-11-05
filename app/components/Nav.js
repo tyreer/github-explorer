@@ -4,44 +4,47 @@ import PropTypes from 'prop-types';
 
 export default function Nav (props) {
   return (
-    <div className='Nav-container'>
-      {props.expanded !== true
+    <div className='Nav__container'>
+
+      {props.expanded === false
         ?
         <ul className='Nav'>
            <li>
-             <NavLink exact activeClassName='active' to='/'>
+             <NavLink exact to='/'>
                Home
              </NavLink>
            </li>
-         </ul>
+        </ul>
         :
-        <div className='Nav-container--expanded'>
+        <div className='Nav__container--expanded'>
           <ul className='Nav--options'>
             <li>
-              <NavLink activeClassName='active' to='/followers'>
+              <NavLink to='/followers'>
                 Followers
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName='active' to='/battle'>
+              <NavLink to='/battle'>
                 Battle
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName='active' to='/famous'>
+              <NavLink to='/famous'>
                 Famous
               </NavLink>
             </li>
           </ul>
           <p className="Nav__footer">Good times with the GitHub API</p>
-        </div>}
-     </div>
+        </div>
+      }
+
+    </div>
   )
 }
 
 Nav.propTypes = {
   expanded: PropTypes.bool,
-};
+}
 
 Nav.defaultProps = {
   expanded: true,

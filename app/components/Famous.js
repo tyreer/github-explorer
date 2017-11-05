@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
 import Loading from './Loading';
 
-
 const SelectLanguage = ({ selectedLanguage, updateLanguage }) => {
   const languages = ['All', 'JavaScript', 'CSS', 'Swift', 'Python', 'C', 'Java', 'Haskell'];
 
@@ -34,12 +33,12 @@ SelectLanguage.propTypes = {
 
 const RepoGrid = ({ repos }) => {
   return (
-    <ul className = 'famous-list'>
+    <ul className = 'Famous__list'>
       {repos.map( (repo, index) => {
 
-          return(
-            <li key={repo.name} className = 'popular-item'>
-              <div className = 'popular-rank'>#{index+1}</div>
+          return (
+            <li key={repo.name} className = 'Famous__repo-listing'>
+              <div className = 'Famous__rank'>#{index+1}</div>
               <ul>
                 <li className = 'Famous__repo'>
                   <a href={repo.html_url}>
@@ -93,7 +92,7 @@ export default class Famous extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
         <SelectLanguage
           selectedLanguage={this.state.selectedLanguage}
