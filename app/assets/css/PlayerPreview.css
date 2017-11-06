@@ -1,22 +1,21 @@
 .PlayerPreview__container {
   -webkit-backface-visibility: hidden;
+  align-items: center;
+  animation: box-width 0.5s linear forwards;
+  background: white;
+  border: 8px solid black;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  align-items: center;
   justify-content: center;
-  position: relative;
-  background-color: white;
-  background: white;
-  width: 100vw;
-  animation: box-width 0.5s linear forwards;
-  border: 8px solid black;
-  padding: 50px 0 20px;
   margin: 0 auto var(--base-large-margin);
+  max-width: 500px;
+  padding: 50px 0 20px;
+  position: relative;
+  width: 100%;
+  width: 100vw;
 
   @media(--desktop) {
     margin: var(--base-large-margin) auto;
-    max-width: 500px;
   }
 }
 

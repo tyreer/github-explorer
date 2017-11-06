@@ -1,14 +1,14 @@
 .Followers__container {
-  height: 80vh;
   display: flex;
   flex-direction: column;
+  height: 80vh;
   justify-content: center;
 }
 
 .Followers__headline {
+  color: white;
   font-size: 30px;
   margin: 0 0 var(--base-large-margin);
-  color: white;
   text-align: center;
 
   @media (--tablet) {
@@ -17,30 +17,29 @@
 }
 
 .Followers__button {
-  transition: all 0.5s;
+  background: var(--color-blue);
+  border-radius: 3px;
   border: 4px white solid;
   color: white;
-  background: var(--color-blue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   font-family: Josefin Sans, system-ui;
   font-size: 43px;
-  border-radius: 3px;
-  text-align: center;
   height: 15vh;
+  line-height: 15vh;
+  text-align: center;
+  transition: all 0.5s;
   width: 35vw;
-  padding-top: 10px;
+  padding: 0;
 
   @media (--tablet) {
     height: 80px;
+    line-height: 80px;
     width: 100px;
 
     &:hover {
       background: white;
-      color: var(--color-blue);
       border-radius: 20px;
+      color: var(--color-blue);
     }
   }
 }
