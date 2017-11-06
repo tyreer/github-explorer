@@ -165,18 +165,17 @@
   }
 }
 
-
-.FollowerResults__img--followingUser {
+.FollowerResults__img--animated.followingUser {
   animation: leftMid 10s ease-in infinite;
   z-index: 4;
 }
 
-.FollowerResults__img--gitHub {
+.FollowerResults__img--animated.gitHub {
   animation: Mid 10s ease-in infinite;
   z-index: 4;
 }
 
-.FollowerResults__img--followedUser {
+.FollowerResults__img--animated.followedUser {
   animation: midRight 10s ease-in infinite;
   z-index: 3;
 }
