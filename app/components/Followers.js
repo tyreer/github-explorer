@@ -19,10 +19,10 @@ export default class Followers extends Component {
     this.handleReset = this.handleReset.bind(this);
    }
 
-   handleSubmit(id, username) {
+  handleSubmit(id, username) {
     let errorMsg = null;
 
-     getProfile(username)
+    getProfile(username)
       .then(data => {
         this.setState(() => {
           let newState = {};
@@ -40,7 +40,7 @@ export default class Followers extends Component {
           return newState;
         })
       });
-   }
+    }
 
    handleReset() {
     this.setState(() => {
@@ -53,10 +53,10 @@ export default class Followers extends Component {
    }
 
   render() {
-    let match = this.props.match;
-    let name = this.state.name;
-    let image = this.state.image;
-    let error = this.state.error;
+    const match = this.props.match;
+    const name = this.state.name;
+    const image = this.state.image;
+    const error = this.state.error;
 
     return (
       <div>
@@ -76,14 +76,14 @@ export default class Followers extends Component {
         }
 
         {error === 404 &&
-          <div className="FollowerResults__container">
-            <h2 className="FollowerResults__h2">
-              UH OH
-            </h2>
-            <h2 className="FollowerResults__h2">
-              <span>{name}</span> does not exist on GitHub...
-            </h2>
-            <li>
+          <div>
+            <div className="FollowerResults__container error">
+              <h2 className="FollowerResults__h2">
+                UH OH
+              </h2>
+              <h2 className="FollowerResults__h2">
+                <span>{name}</span> is not a GitHub user...
+              </h2>
               <NavLink
                 activeClassName='active'
                 to='/followers'
@@ -91,7 +91,28 @@ export default class Followers extends Component {
                 onClick = {this.handleReset}>
                 Try again?
               </NavLink>
-            </li>
+            </div>
+            <div className="FollowerResults__bottomDiv"></div>
+          </div>
+        }
+
+        {error === 403 &&
+          <div>
+            <div className="FollowerResults__container error">
+              <h2 className="FollowerResults__h2">
+                UH OH
+              </h2>
+              <h2 className="FollowerResults__h2">
+                GitHub API rate limit exceeded
+              </h2>
+              <NavLink
+                activeClassName='active'
+                to='/followers'
+                className="Nav__a--blue"
+                onClick = {this.handleReset}>
+                Try again after a few minutes?
+              </NavLink>
+            </div>
             <div className="FollowerResults__bottomDiv"></div>
           </div>
         }

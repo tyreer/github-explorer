@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import Loading from './Loading';
 import { getAllFollowersData } from '../utils/api';
@@ -35,6 +34,7 @@ export default class FollowerResults extends Component {
     getAllFollowersData(followed.username)
     .then(function(data) {
       let mungedData = data.map(follower => {
+
         let bio;
         if (follower.data.bio !== null && follower.data.bio.length >= 110 && window.innerWidth < 400) {
             bio = `: ${follower.data.bio.substring(0,85)}...`;
@@ -115,27 +115,25 @@ export default class FollowerResults extends Component {
 
     if (this.state.followers.length <= 0) {
       return (
-        <div className="FollowerResults__container">
-          <h2 className="FollowerResults__h2">
-            OH NO
-          </h2>
-          <h2 className="FollowerResults__h2">
-            {this.state.followed.username} has no followers
-          </h2>
-          <li>
+        <div>
+          <div className="FollowerResults__container error">
+            <h2 className="FollowerResults__h2">OH NO</h2>
+            <h2 className="FollowerResults__h2">
+              {this.state.followed.username} has no followers
+            </h2>
             <NavLink activeClassName='active' to='/followers' className="Nav__a--blue">
               Try again?
             </NavLink>
-          </li>
+          </div>
           <div className="FollowerResults__bottomDiv"></div>
         </div>
       )
-    } else {
-      return (
-        <div className='FollowerResults__container'>
-          {this.state.displayedFollower}
-        </div>
-      )
     }
+
+    return (
+      <div className='FollowerResults__container'>
+        {this.state.displayedFollower}
+      </div>
+    )
   }
 }

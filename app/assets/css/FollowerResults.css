@@ -12,6 +12,19 @@
   }
 }
 
+.FollowerResults__container.error {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: 10px;
+
+  & h2 {
+    margin-bottom: 0.2rem;
+  }
+}
+
 .FollowerResults__img,
 .FollowerResults__container--inner {
   width: 70vw;

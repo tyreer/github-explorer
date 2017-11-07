@@ -37,10 +37,10 @@ export default class PlayerInput extends Component {
       <form className={this.props.className} onSubmit={this.handleSubmit}>
         <label className={this.props.labelClass} htmlFor='username'>{this.props.label}</label>
         <input
-          id='username'
           className='PlayerInput__input'
-          placeholder='github username'
           type='text'
+          id='username'
+          placeholder='github username'
           value={this.state.username}
           autoComplete='off'
           onChange={this.handleChange}
@@ -61,12 +61,12 @@ PlayerInput.propTypes = {
   label: PropTypes.string.isRequired,
   onSubmit: PropTypes.func.isRequired,
   className: PropTypes.string,
-  labelClass: PropTypes.string
+  labelClass: PropTypes.string,
 }
 
 PlayerInput.defaultProps = {
   label: 'Username',
   className: 'PlayerInput__container',
   buttonText: 'Submit',
-  labelClass: 'header'
+  labelClass: 'header',
 }
