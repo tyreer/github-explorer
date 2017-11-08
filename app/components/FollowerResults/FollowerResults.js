@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import queryString from 'query-string';
-import Loading from './Loading';
-import { getAllFollowersData } from '../utils/api';
-import logo from '../assets/github-logo.png';
+import Loading from '../Loading/Loading';
+import { getAllFollowersData } from '../../utils/api';
+import logo from '../../assets/github-logo.png';
 
 export default class FollowerResults extends Component {
   constructor(props) {

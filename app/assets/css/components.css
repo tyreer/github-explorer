@@ -1,11 +1,11 @@
 @import url("./base.css");
-@import url("./Followers.css");
-@import url("./FollowerResults.css");
-@import url("./Nav.css");
-@import url("./PlayerInput.css");
-@import url("./PlayerPreview.css");
-@import url("./Battle.css");
-@import url("./Famous.css");
+@import url("../../components/Followers/Followers.css");
+@import url("../../components/FollowerResults/FollowerResults.css");
+@import url("../../components/Nav/Nav.css");
+@import url("../../components/PlayerInput/PlayerInput.css");
+@import url("../../components/PlayerPreview/PlayerPreview.css");
+@import url("../../components/Battle/Battle.css");
+@import url("../../components/Famous/Famous.css");
 
 .avatar {
   width: 150px;
@@ -19,7 +19,6 @@
 }
 
 .container {
-  /*max-width: 900px;*/
   display: flex;
   flex-direction: column;
   height: 70vh;
@@ -27,16 +26,7 @@
   @media (--tablet) {
     height: 85vh;
   }
-
-  /*@media (--desktop) {
-    height: 85vh;
-    justify-content: center;
-  }*/
 }
-
-/*.active {
-  font-weight: bold;
-}*/
 
 .column label {
   text-align: center;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import PlayerPreview from './PlayerPreview';
-import PlayerInput from './PlayerInput';
+import PlayerPreview from '../PlayerPreview/PlayerPreview';
+import PlayerInput from '../PlayerInput/PlayerInput';
 
 export default class Battle extends Component {
   constructor(props) {

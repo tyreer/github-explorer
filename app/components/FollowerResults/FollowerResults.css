@@ -35,10 +35,10 @@
   max-height: 350px;
 
   @media (--tablet) {
-      height: 40vw;
-      width: 40vw;
-      max-width: 375px;
-      max-height: 375px;
+    height: 40vw;
+    width: 40vw;
+    max-width: 375px;
+    max-height: 375px;
   }
 }
 

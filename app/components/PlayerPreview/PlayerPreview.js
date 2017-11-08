@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import logo from '../assets/github-logo.png';
+import logo from '../../assets/github-logo.png';
 
 export default function PlayerPreview (props) {
 

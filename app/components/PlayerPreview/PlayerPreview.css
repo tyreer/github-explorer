@@ -12,20 +12,12 @@
   padding: 50px 0 20px;
   position: relative;
   width: 100%;
-  width: 100vw;
 
   @media(--desktop) {
     margin: var(--base-large-margin) auto;
   }
 }
 
-/*.PlayerPreview__container {
-  display: flex;
-  flex-direction: column;*/
-  /*width: 500px;*/
-  /*align-items: center;
-  position: relative;
-}*/
 
 .PlayerPreview__username {
   color: black;
@@ -121,14 +113,3 @@
     width: 85vw;
   }
 }
-
-/*@media (--tablet) {
-  @keyframes box-width {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 40vw;
-    }
-  }
-}*/

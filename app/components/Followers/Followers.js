@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import PlayerInput from './PlayerInput';
-import PlayerPreview from './PlayerPreview';
-import { getProfile } from '../utils/api';
+import PlayerInput from '../PlayerInput/PlayerInput';
+import PlayerPreview from '../PlayerPreview/PlayerPreview';
+import { getProfile } from '../../utils/api';
 
 
 export default class Followers extends Component {

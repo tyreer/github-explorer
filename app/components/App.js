@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { ReactRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
-import Nav from './Nav';
-import Battle from './Battle';
-import Famous from './Famous';
-import Results from './Results';
-import Followers from './Followers';
-import FollowerResults from './FollowerResults';
+import Nav from './Nav/Nav';
+import Battle from './Battle/Battle';
+import Famous from './Famous/Famous';
+import Results from './Results/Results';
+import Followers from './Followers/Followers';
+import FollowerResults from './FollowerResults/FollowerResults';
 
 export default class App extends Component {
 

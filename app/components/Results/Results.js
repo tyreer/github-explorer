@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
-import { battle } from '../utils/api';
 import { Link } from 'react-router-dom';
-import PlayerPreview from './PlayerPreview';
-import Loading from './Loading';
+import { battle } from '../../utils/api';
+import PlayerPreview from '../PlayerPreview/PlayerPreview';
+import Loading from '../Loading/Loading';
 
 
 function Profile (props) {
