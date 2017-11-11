@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
 import PlayerInput from '../PlayerInput/PlayerInput';
 
-export default class Battle extends Component {
+export default class Battle extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -38,11 +38,11 @@ export default class Battle extends Component {
   }
 
   render() {
-    let match = this.props.match;
-    let playerOneName = this.state.playerOneName;
-    let playerOneImage = this.state.playerOneImage;
-    let playerTwoName = this.state.playerTwoName;
-    let playerTwoImage = this.state.playerTwoImage;
+    const match = this.props.match;
+    const playerOneName = this.state.playerOneName;
+    const playerOneImage = this.state.playerOneImage;
+    const playerTwoName = this.state.playerTwoName;
+    const playerTwoImage = this.state.playerTwoImage;
 
     return (
       <div>

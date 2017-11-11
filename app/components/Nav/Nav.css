@@ -1,22 +1,22 @@
 .Nav__container {
-  margin: 10px var(--base-small-margin) var(--base-small-margin);
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  margin: 10px var(--base-small-margin) var(--base-small-margin);
 }
 
 .Nav__container--expanded {
+  align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-self: center;
   flex: 1;
+  justify-content: center;
 }
 
 .Nav {
+  margin: 0;
   position: relative;
   z-index: 3;
-  margin: 0;
 
   @media (--tablet) {
     width: 15%;
@@ -24,14 +24,14 @@
 
   & li {
     border-bottom: 1px solid white;
-    padding: 5px 0;
     flex-grow: 1;
+    padding: 5px 0;
   }
 
   & a {
+    color: white;
     display: block;
     padding: 10px 0;
-    color: white;
   }
 }
 
@@ -39,16 +39,17 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  height: 87%;
   position: relative;
   z-index: 3;
-  height: 87%;
-  flex: 1;
 
   & li {
     border: 1px solid white;
+    box-sizing: border-box;
     flex: 1;
-    width: 50vw;
     max-width: 400px;
+    width: 50vw;
   }
 
   & li:first-child {
@@ -68,6 +69,11 @@
       padding-bottom: 120px;
     }
   }
+
+  & li:hover {
+    border-right: 3px solid white;
+  }
+
 }
 
 .Nav__a--blue {
@@ -75,15 +81,15 @@
 }
 
 .Nav__footer {
-  color: white;
-  text-align: center;
-  position: fixed;
   bottom: 0;
+  color: white;
   left: 0;
+  position: fixed;
   right: 0;
+  text-align: center;
 
   @media (--tablet) {
-    text-align: right;
     padding-right: var(--base-large-margin);
+    text-align: right;
   }
 }

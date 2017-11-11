@@ -1,53 +1,14 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
 import { battle } from '../../utils/api';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
 import Loading from '../Loading/Loading';
+import Profile from '../Profile/Profile';
+import Player from '../Player/Player';
 
-
-function Profile (props) {
-  var info = props.info;
-
-  return (
-    <PlayerPreview username={info.login} avatar={info.avatar_url}>
-      {props.children}
-      <ul className='Battle__list'>
-        {info.name && <li>{info.name}</li>}
-        {info.location && <li>{info.location}</li>}
-        {info.company && <li>{info.company}</li>}
-        <li>Followers: {info.followers}</li>
-        <li>Following: {info.following}</li>
-        <li>Public Repos: {info.public_repos}</li>
-        {info.blog && <li><a href={info.blog}>{info.blog}</a></li>}
-      </ul>
-    </PlayerPreview>
-  )
-}
-
-Profile.propTypes = {
-  info: PropTypes.object.isRequired,
-}
-
-function Player (props) {
-  return (
-    <div>
-      <Profile info={props.profile}>
-        <h2 className='header'>{props.label}</h2>
-        <h3 style={{textAlign: 'center'}}>Score: {props.score}</h3>
-      </Profile>
-    </div>
-  )
-}
-
-Player.propTypes = {
-  label: PropTypes.string.isRequired,
-  score: PropTypes.number.isRequired,
-  profile: PropTypes.object.isRequired,
-}
-
-export default class Results extends Component {
+export default class Results extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -59,12 +20,12 @@ export default class Results extends Component {
   }
 
   componentDidMount() {
-    let players = queryString.parse(this.props.location.search);
+    const players = queryString.parse(this.props.location.search);
 
     battle([
       players.playerOneName,
       players.playerTwoName
-    ]).then(function (players) {
+    ]).then( players => {
       if (players === null) {
         return this.setState( function() {
           return {
@@ -82,13 +43,13 @@ export default class Results extends Component {
           loading: false,
         }
       });
-    }.bind(this));
+    });
   }
   render() {
-    var error = this.state.error;
-    var winner = this.state.winner;
-    var loser = this.state.loser;
-    var loading = this.state.loading;
+    const error = this.state.error;
+    const winner = this.state.winner;
+    const loser = this.state.loser;
+    const loading = this.state.loading;
 
     if (loading === true) {
      return <Loading />
@@ -105,17 +66,17 @@ export default class Results extends Component {
 
     return (
       <div>
-       <Player
-         label='Winner'
-         score={winner.score}
-         profile={winner.profile}
-       />
-       <Player
-         label='Loser'
-         score={loser.score}
-         profile={loser.profile}
-       />
-     </div>
+         <Player
+           label='Winner'
+           score={winner.score}
+           profile={winner.profile}
+         />
+         <Player
+           label='Loser'
+           score={loser.score}
+           profile={loser.profile}
+         />
+       </div>
     )
   }
 }

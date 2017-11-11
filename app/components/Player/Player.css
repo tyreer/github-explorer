@@ -1,0 +1,11 @@
+.Player__header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+  margin: 0;
+  color: black;
+}
+
+.Player__score {
+  text-align: center;
+}

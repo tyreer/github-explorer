@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { ReactRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import Battle from './Battle/Battle';
@@ -7,7 +7,7 @@ import Results from './Results/Results';
 import Followers from './Followers/Followers';
 import FollowerResults from './FollowerResults/FollowerResults';
 
-export default class App extends Component {
+export default class App extends PureComponent {
 
   render() {
 

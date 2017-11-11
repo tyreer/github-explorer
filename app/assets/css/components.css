@@ -5,7 +5,11 @@
 @import url("../../components/PlayerInput/PlayerInput.css");
 @import url("../../components/PlayerPreview/PlayerPreview.css");
 @import url("../../components/Battle/Battle.css");
-@import url("../../components/Famous/Famous.css");
+@import url("../../components/SelectLanguage/SelectLanguage.css");
+@import url("../../components/RepoGrid/RepoGrid.css");
+@import url("../../components/Loading/Loading.css");
+@import url("../../components/Profile/Profile.css");
+@import url("../../components/Player/Player.css");
 
 .avatar {
   width: 150px;
@@ -32,12 +36,4 @@
   text-align: center;
   font-size: 30px;
   font-weight: 200;
-}
-
-.header {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 200;
-  margin: 0;
-  color: black;
 }

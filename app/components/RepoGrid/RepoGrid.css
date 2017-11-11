@@ -1,0 +1,15 @@
+.RepoGrid__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.RepoGrid__repo-listing {
+  margin: 20px;
+  text-align: center;
+}
+
+.RepoGrid__rank {
+  font-size: 20px;
+  margin: 10px;
+}

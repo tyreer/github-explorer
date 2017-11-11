@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-const styles = {
-  content: {
-    textAlign: 'center',
-    fontSize: '35px'
-  }
-};
-
-export default class Loading extends Component {
+export default class Loading extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -18,7 +11,7 @@ export default class Loading extends Component {
   }
 
   componentDidMount() {
-    let stopper = this.props.text + '...';
+    let stopper = `${this.props.text} ...`;
     this.interval = window.setInterval(function () {
       if (this.state.text === stopper) {
         this.setState(function () {
@@ -29,7 +22,7 @@ export default class Loading extends Component {
       } else {
         this.setState(function (prevState) {
           return {
-            text: prevState.text + '.'
+            text: `${prevState.text} .`
           }
         });
       }
@@ -42,7 +35,7 @@ export default class Loading extends Component {
 
   render() {
    return (
-     <p style={styles.content}>
+     <p className="Loading">
        {this.state.text}
      </p>
    )
@@ -55,6 +48,6 @@ Loading.propTypes = {
 };
 
 Loading.defaultProps = {
-  text: 'Loading',
+  text: `Loading`,
   speed: 300,
 };

@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { NavLink } from 'react-router-dom';
 import queryString from 'query-string';
 import Loading from '../Loading/Loading';
 import { getAllFollowersData } from '../../utils/api';
 import logo from '../../assets/github-logo.png';
 
-export default class FollowerResults extends Component {
+export default class FollowerResults extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +32,7 @@ export default class FollowerResults extends Component {
     const followedUrl = `https://github.com/${followed.username}`;
 
     getAllFollowersData(followed.username)
-    .then(function(data) {
+    .then( data => {
       let mungedData = data.map(follower => {
 
         let bio;
@@ -43,20 +43,55 @@ export default class FollowerResults extends Component {
           };
 
         return (
-          <div className="FollowerResults__container--inner" key={follower.data.id}>
-            <button id="prev" className="FollowerResults__prev" onClick={this.prevFollower} type="button" aria-label="Previous" role="button">Previous</button>
-            <button id="next" className="FollowerResults__next" onClick={this.nextFollower} type="button" aria-label="Next" role="button">Next</button>
+          <div
+            className="FollowerResults__container--inner"
+            key={follower.data.id}
+          >
+            <button
+              id="prev"
+              className="FollowerResults__prev"
+              onClick={this.prevFollower}
+              type="button"
+              aria-label="Previous"
+              role="button">
+              Previous
+            </button>
+            <button
+              id="next"
+              className="FollowerResults__next"
+              onClick={this.nextFollower}
+              type="button"
+              aria-label="Next"
+              role="button">
+              Next
+            </button>
             <div className="FollowerResults__topDiv">
               <h2 className="FollowerResults__h2">{follower.data.name}</h2>
             </div>
-            <img onClick={this.nextFollower} className="FollowerResults__img" src={follower.data.avatar_url}/>
+            <img
+              onClick={this.nextFollower}
+              className="FollowerResults__img"
+              src={follower.data.avatar_url}
+            />
             <p className="FollowerResults__p">{follower.data.location} {bio}</p>
             <a href={follower.data.html_url}>
-              <img className="FollowerResults__img--animated followingUser" src={follower.data.avatar_url} alt="Avatar of following GitHub user"/>
+              <img
+                className="FollowerResults__img--animated followingUser"
+                src={follower.data.avatar_url}
+                alt="Avatar of following GitHub user"
+              />
             </a>
-            <img className="FollowerResults__img--animated gitHub" src={logo} alt="Github logo"/>
+            <img
+              className="FollowerResults__img--animated gitHub"
+              src={logo}
+              alt="Github logo"
+            />
             <a href={followedUrl}>
-              <img className="FollowerResults__img--animated followedUser" src={`https://github.com/${followed.username}.png?size=200`} alt="Avatar of followed GitHub user"/>
+              <img
+                className="FollowerResults__img--animated followedUser"
+                src={`https://github.com/${followed.username}.png?size=200`}
+                alt="Avatar of followed GitHub user"
+              />
             </a>
             <div className="FollowerResults__bottomDiv"></div>
           </div>
@@ -69,9 +104,8 @@ export default class FollowerResults extends Component {
           followed: followed,
           followedUrl: followedUrl
         });
-
-    }.bind(this));
-  }
+    })
+  };
 
   nextFollower() {
     let incrementIndex = this.state.index;

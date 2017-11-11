@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-export default class PlayerInput extends Component {
+export default class PlayerInput extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -35,7 +35,10 @@ export default class PlayerInput extends Component {
   render() {
     return (
       <form className={this.props.className} onSubmit={this.handleSubmit}>
-        <label className={this.props.labelClass} htmlFor='username'>{this.props.label}</label>
+        <label
+          className={this.props.labelClass}
+          htmlFor='username'>{this.props.label}
+        </label>
         <input
           className='PlayerInput__input'
           type='text'

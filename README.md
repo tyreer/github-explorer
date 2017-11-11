@@ -3,12 +3,18 @@ Adventures in GitHub
 
 This React web app allows you to explore the GitHub public API.
 
-This app in this repo was built from scratch following Tyler McGinnis's [React Fundamentals](https://tylermcginnis.com/courses/react-fundamentals/) course.
+###### Check it out [here](https://react-scratch-uk.firebaseapp.com/)
 
-The _Followers_ components are my original addition—basically an extension of the tutorial app. _Battle_ and _Famous_ were built during the tutorial guided by McGinnis.
+Adventures in GitHub in this repo was built from scratch following Tyler McGinnis's [React Fundamentals](https://tylermcginnis.com/courses/react-fundamentals/) course.
 
-For my part, I've refactored the app into ES6 syntax and made it responsive, while also developing the visual design and UI.
+The components related to _Followers_ are my addition—basically an extension of the tutorial app I wanted to build out to ensure I was able to put into practice the lessons of the course. _Battle_ and _Famous_ were built during the tutorial following McGinnis.
 
-The app is live at https://react-scratch-uk.firebaseapp.com/
+I've done quite a bit of refactoring to introduce:
+* ES6 syntax
+* responsive rendering
+* BEM conventions
+* [PostCSS-cssnext](http://cssnext.io/) syntax
 
-Thanks to Ryan McGinnis for the great tutorial and [Alex Da Corte](http://alexdacorte.com/) for having an inspiring portfolio site. 
+I've also developed the visual design and UI from the [tutorial app](https://rt-react-fundamentals.firebaseapp.com/).
+
+Thanks to [Tyler McGinnis](https://twitter.com/tylermcginnis) for the great course and [Alex Da Corte](http://alexdacorte.com/) for having an inspiring portfolio site.
