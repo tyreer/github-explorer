@@ -4,8 +4,10 @@ import { fetchPopularRepos } from '../../utils/api';
 import Loading from '../Loading/Loading';
 import SelectLanguage from '../SelectLanguage/SelectLanguage';
 import RepoGrid from '../RepoGrid/RepoGrid';
+import RateError from '../RateError/RateError';
 
 export default class Famous extends PureComponent {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -20,6 +22,8 @@ export default class Famous extends PureComponent {
   }
 
   updateLanguage(language) {
+    let errorMsg = null;
+
     this.setState({
       selectedLanguage: language,
       repos: null
@@ -29,6 +33,15 @@ export default class Famous extends PureComponent {
       .then((repos) => {
         this.setState({
           repos: repos
+        })
+      })
+      .catch(error => {
+        errorMsg = error.response.status;
+        this.setState(() => {
+          let newState = {};
+          newState['error'] = errorMsg;
+          newState['repos'] = [];
+          return newState;
         })
       });
   }
@@ -40,9 +53,14 @@ export default class Famous extends PureComponent {
           selectedLanguage={this.state.selectedLanguage}
           updateLanguage={this.updateLanguage}
         />
+
         {!this.state.repos
         ? <Loading />
         : <RepoGrid repos={this.state.repos} />}
+
+        {this.state.error === 403 &&
+          <RateError />
+        }
       </div>
     )
   }

@@ -6,13 +6,9 @@
   align-items: center;
   text-align: center;
   position: relative;
-
-  @media (--tablet) {
-    height: 100%;
-  }
 }
 
-.FollowerResults__container.error {
+.FollowerResults__container--error {
   position: fixed;
   left: 0;
   right: 0;

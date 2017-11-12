@@ -1,25 +1,13 @@
 .Battle__container {
-  height: 65vh;
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
-  max-width: 900px;
+  height: 65vh;
+  justify-content: space-around;
   margin: auto;
+  max-width: 900px;
 
   @media(--desktop) {
     flex-direction: row;
-  }
-
-  & .avatar {
-    width: 120px;
-    height: 120px;
-    min-width: 120px;
-    min-height: 120px;
-
-    @media(--desktop) {
-      width: 175px;
-      height: 175px;
-    }
   }
 
   & .PlayerPreview__container {
@@ -29,15 +17,15 @@
   }
 
   & .PlayerPreview__button--reset {
+    bottom: 0;
     max-width: 118px;
     position: absolute;
-    bottom: 0;
     right: 20px;
   }
 
   & .PlayerPreview__username {
-    margin: 10px 0;
     font-size: 2.2rem;
+    margin: 10px 0;
   }
 
   & .PlayerPreview__GitHub {
@@ -46,10 +34,18 @@
 }
 
 .Battle__button {
-  color: white;
   background: transparent;
   border: 1px solid white;
-  width: 175px;
-  padding: 15px 0;
+  color: white;
+  cursor: pointer;
   margin: 10px auto;
+  padding: 15px 0;
+  width: 175px;
+  transition: all 0.25s;
+
+  &:hover {
+    background: white;
+    border-radius: 20px;
+    color: var(--color-blue);
+  }
 }

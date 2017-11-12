@@ -147,15 +147,21 @@ export default class FollowerResults extends PureComponent {
       return <Loading />
     }
 
+    return (
+      <div className='FollowerResults__container'>
+        {this.state.displayedFollower}
+      </div>
+    )
+
     if (this.state.followers.length <= 0) {
       return (
         <div>
-          <div className="FollowerResults__container error">
+          <div className="FollowerResults__container--error">
             <h2 className="FollowerResults__h2">OH NO</h2>
             <h2 className="FollowerResults__h2">
               {this.state.followed.username} has no followers
             </h2>
-            <NavLink activeClassName='active' to='/followers' className="Nav__a--blue">
+            <NavLink to='/followers' className="Nav__a--blue">
               Try again?
             </NavLink>
           </div>
@@ -163,11 +169,5 @@ export default class FollowerResults extends PureComponent {
         </div>
       )
     }
-
-    return (
-      <div className='FollowerResults__container'>
-        {this.state.displayedFollower}
-      </div>
-    )
   }
 }

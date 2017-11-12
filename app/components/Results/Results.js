@@ -7,6 +7,7 @@ import PlayerPreview from '../PlayerPreview/PlayerPreview';
 import Loading from '../Loading/Loading';
 import Profile from '../Profile/Profile';
 import Player from '../Player/Player';
+import RateError from '../RateError/RateError';
 
 export default class Results extends PureComponent {
   constructor(props) {
@@ -25,17 +26,18 @@ export default class Results extends PureComponent {
     battle([
       players.playerOneName,
       players.playerTwoName
-    ]).then( players => {
+    ])
+    .then( players => {
       if (players === null) {
-        return this.setState( function() {
+        return this.setState(() => {
           return {
-           error: 'Looks like there was an error. Check that both users exist on Github.',
+           error: 403,
            loading: false,
           }
         });
       }
 
-      this.setState(function () {
+      this.setState(() => {
         return {
           error: null,
           winner: players[0],
@@ -43,8 +45,9 @@ export default class Results extends PureComponent {
           loading: false,
         }
       });
-    });
+    })
   }
+
   render() {
     const error = this.state.error;
     const winner = this.state.winner;
@@ -57,10 +60,7 @@ export default class Results extends PureComponent {
 
    if (error) {
      return (
-       <div>
-         <p>{error}</p>
-         <Link to='/battle'>Reset</Link>
-       </div>
+       <RateError />
      )
    }
 

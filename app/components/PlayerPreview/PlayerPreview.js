@@ -9,7 +9,7 @@ export default function PlayerPreview (props) {
       <div className="PlayerPreview__avatarWrapper">
         <img className="PlayerPreview__GitHub" src={logo} alt="Github logo"/>
         <img
-          className='avatar'
+          className='PlayerPreview__avatar'
           src={props.avatar}
           alt={'Avatar for ' + props.username}
         />

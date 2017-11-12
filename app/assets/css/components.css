@@ -10,30 +10,4 @@
 @import url("../../components/Loading/Loading.css");
 @import url("../../components/Profile/Profile.css");
 @import url("../../components/Player/Player.css");
-
-.avatar {
-  width: 150px;
-  height: 150px;
-  min-width: 150px;
-  min-height: 150px;
-  border-radius: 50%;
-  background-color: whitesmoke;
-  z-index: 2;
-  position: relative;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 70vh;
-
-  @media (--tablet) {
-    height: 85vh;
-  }
-}
-
-.column label {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 200;
-}
+@import url("../../components/RateError/RateError.css");

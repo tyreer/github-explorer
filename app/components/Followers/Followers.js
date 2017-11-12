@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import PlayerInput from '../PlayerInput/PlayerInput';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
+import RateError from '../RateError/RateError';
 import { getProfile } from '../../utils/api';
 
 export default class Followers extends PureComponent {
@@ -61,7 +62,7 @@ export default class Followers extends PureComponent {
       <div>
         {!name &&
           <div className="Followers__container">
-            <h2 className='Followers__headline'>Who follows...</h2>
+            <h2 className='Followers__header'>Who follows...</h2>
             <PlayerInput
               id='followed'
               label= 'github username'
@@ -84,7 +85,6 @@ export default class Followers extends PureComponent {
                 <span>{name}</span> is not a GitHub user...
               </h2>
               <NavLink
-                activeClassName='active'
                 to='/followers'
                 className="Nav__a--blue"
                 onClick = {this.handleReset}>
@@ -95,25 +95,8 @@ export default class Followers extends PureComponent {
           </div>
         }
 
-        {error === 403 &&
-          <div>
-            <div className="FollowerResults__container error">
-              <h2 className="FollowerResults__h2">
-                UH OH
-              </h2>
-              <h2 className="FollowerResults__h2">
-                GitHub API rate limit exceeded
-              </h2>
-              <NavLink
-                activeClassName='active'
-                to='/followers'
-                className="Nav__a--blue"
-                onClick = {this.handleReset}>
-                Try again after a few minutes?
-              </NavLink>
-            </div>
-            <div className="FollowerResults__bottomDiv"></div>
-          </div>
+        {this.state.error === 403 &&
+          <RateError />
         }
 
         {image !== null &&

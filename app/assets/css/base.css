@@ -11,7 +11,6 @@
 body {
   background: var(--color-blue);
   font-family: Josefin Sans, system-ui;
-  font-size: 16px;
 }
 
 button {
@@ -32,20 +31,22 @@ a {
   color: var(--color-blue);
 }
 
-h1 {
-  font-size: 1.5rem;
-
-  @media (--tablet) {
-    font-size: 2rem;
-  }
-}
-
 input,
 textarea,
 button,
 select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0)
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+
+  @media (--tablet) {
+    height: 85vh;
+  }
 }
 
 /* Positions input labels out of view while remaining accessible to screen readers */

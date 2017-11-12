@@ -13,7 +13,7 @@ export default function RepoGrid(props) {
                 <li className = 'RepoGrid__repo'>
                   <a href={repo.html_url}>
                     <img
-                      className = 'avatar'
+                      className = 'RepoGrid__avatar'
                       src={repo.owner.avatar_url}
                       alt={`Avatar for ${repo.owner.login}`} />
                   </a>
