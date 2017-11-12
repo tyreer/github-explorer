@@ -3,11 +3,11 @@ Adventures in GitHub
 
 This React web app allows you to explore the GitHub public API.
 
-###### Check it out [here](https://react-scratch-uk.firebaseapp.com/)
+##### Check it out [here](https://react-scratch-uk.firebaseapp.com/)
 
-Adventures in GitHub in this repo was built from scratch following Tyler McGinnis's [React Fundamentals](https://tylermcginnis.com/courses/react-fundamentals/) course.
+This app was built from scratch following Tyler McGinnis's [React Fundamentals](https://tylermcginnis.com/courses/react-fundamentals/) course.
 
-The components related to _Followers_ are my addition—basically an extension of the tutorial app I wanted to build out to ensure I was able to put into practice the lessons of the course. _Battle_ and _Famous_ were built during the tutorial following McGinnis.
+The components related to _Followers_ are my addition—basically an extension of the tutorial app built t0 practice the lessons of the course. _Battle_ and _Famous_ were built during the tutorial following McGinnis.
 
 I've done quite a bit of refactoring to introduce:
 * ES6 syntax
