@@ -1,24 +1,24 @@
 .PlayerInput__container {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .PlayerInput__header {
-  text-align: center;
+  color: black;
   font-size: 30px;
   font-weight: 200;
   margin: 0;
-  color: black;
+  text-align: center;
 }
 
 .PlayerInput--single,
 .PlayerInput--battle {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  align-items: center;
   justify-content: flex-end;
+  width: 100%;
 
     @media (--tablet) {
       justify-content: center;
@@ -45,14 +45,14 @@
 
 .PlayerInput__input {
   border-radius: 3px;
-  margin: 0 0 var(--base-large-margin);
-  height: 45px;
-  line-height: 45px;
-  padding-left: 10px;
   border: 1px solid rgba(0, 0, 0, 0.43);
   font-size: 16px;
-  width: 75%;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 0 var(--base-large-margin);
   max-width: 400px;
+  padding-left: 10px;
+  width: 75%;
 
   @media (--tablet) {
     width: 50%;

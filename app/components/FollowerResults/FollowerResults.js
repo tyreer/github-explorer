@@ -11,8 +11,8 @@ export default class FollowerResults extends PureComponent {
     this.state = {
       followers: null,
       displayedFollower: null,
-      index: 0
-    }
+      index: 0,
+    };
 
     this.nextFollower = this.nextFollower.bind(this);
     this.prevFollower = this.prevFollower.bind(this);
@@ -20,138 +20,129 @@ export default class FollowerResults extends PureComponent {
   }
 
   componentWillMount() {
-    document.addEventListener("keydown", this.prevNextKeys);
-  };
-
-  componentWillUnmount() {
-    document.removeEventListener("keydown", this.prevNextKeys);
-  };
+    document.addEventListener('keydown', this.prevNextKeys);
+  }
 
   componentDidMount() {
     const followed = queryString.parse(this.props.location.search);
     const followedUrl = `https://github.com/${followed.username}`;
 
     getAllFollowersData(followed.username)
-    .then( data => {
-      let mungedData = data.map(follower => {
-
-        let bio;
-        if (follower.data.bio !== null && follower.data.bio.length >= 110 && window.innerWidth < 400) {
-            bio = `: ${follower.data.bio.substring(0,85)}...`;
+      .then((data) => {
+        const mungedData = data.map((follower) => {
+          let bio;
+          if (follower.data.bio !== null && follower.data.bio.length >= 110 && window.innerWidth < 400) {
+            bio = `: ${follower.data.bio.substring(0, 85)}...`;
           } else if (follower.data.bio !== null) {
             bio = `: ${follower.data.bio}`;
-          };
+          }
 
-        return (
-          <div
-            className="FollowerResults__container--inner"
-            key={follower.data.id}
-          >
-            <button
-              id="prev"
-              className="FollowerResults__prev"
-              onClick={this.prevFollower}
-              type="button"
-              aria-label="Previous"
-              role="button">
+          return (
+            <div
+              className="FollowerResults__container--inner"
+              key={follower.data.id}
+            >
+              <button
+                id="prev"
+                className="FollowerResults__prev"
+                onClick={this.prevFollower}
+                type="button"
+                aria-label="Previous"
+              >
               Previous
-            </button>
-            <button
-              id="next"
-              className="FollowerResults__next"
-              onClick={this.nextFollower}
-              type="button"
-              aria-label="Next"
-              role="button">
+              </button>
+              <button
+                id="next"
+                className="FollowerResults__next"
+                onClick={this.nextFollower}
+                type="button"
+                aria-label="Next"
+              >
               Next
-            </button>
-            <div className="FollowerResults__topDiv">
-              <h2 className="FollowerResults__h2">{follower.data.name}</h2>
-            </div>
-            <img
-              onClick={this.nextFollower}
-              className="FollowerResults__img"
-              src={follower.data.avatar_url}
-            />
-            <p className="FollowerResults__p">{follower.data.location} {bio}</p>
-            <a href={follower.data.html_url}>
+              </button>
+              <div className="FollowerResults__topDiv">
+                <h2 className="FollowerResults__h2">{follower.data.name}</h2>
+              </div>
               <img
-                className="FollowerResults__img--animated followingUser"
+                onClick={this.nextFollower}
+                className="FollowerResults__img"
                 src={follower.data.avatar_url}
-                alt="Avatar of following GitHub user"
               />
-            </a>
-            <img
-              className="FollowerResults__img--animated gitHub"
-              src={logo}
-              alt="Github logo"
-            />
-            <a href={followedUrl}>
+              <p className="FollowerResults__p">{follower.data.location} {bio}</p>
+              <a href={follower.data.html_url}>
+                <img
+                  className="FollowerResults__img--animated followingUser"
+                  src={follower.data.avatar_url}
+                  alt="Avatar of following GitHub user"
+                />
+              </a>
               <img
-                className="FollowerResults__img--animated followedUser"
-                src={`https://github.com/${followed.username}.png?size=200`}
-                alt="Avatar of followed GitHub user"
+                className="FollowerResults__img--animated gitHub"
+                src={logo}
+                alt="Github logo"
               />
-            </a>
-            <div className="FollowerResults__bottomDiv"></div>
-          </div>
-        )
-      })
+              <a href={followedUrl}>
+                <img
+                  className="FollowerResults__img--animated followedUser"
+                  src={`https://github.com/${followed.username}.png?size=200`}
+                  alt="Avatar of followed GitHub user"
+                />
+              </a>
+              <div className="FollowerResults__bottomDiv" />
+            </div>
+          );
+        });
 
-      return this.setState({
+        return this.setState({
           followers: mungedData,
           displayedFollower: mungedData[0],
-          followed: followed,
-          followedUrl: followedUrl
+          followed,
         });
-    })
-  };
+      });
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.prevNextKeys);
+  }
 
   nextFollower() {
     let incrementIndex = this.state.index;
 
     incrementIndex === (this.state.followers.length - 1)
-    ? incrementIndex = 0
-    : incrementIndex++;
+      ? incrementIndex = 0
+      : incrementIndex += 1;
 
     this.setState({
-        displayedFollower: this.state.followers[incrementIndex],
-        index: incrementIndex
-      });
+      displayedFollower: this.state.followers[incrementIndex],
+      index: incrementIndex,
+    });
   }
 
   prevFollower() {
     let incrementIndex = this.state.index;
 
     incrementIndex === 0
-    ? incrementIndex = (this.state.followers.length - 1)
-    : incrementIndex--;
+      ? incrementIndex = (this.state.followers.length - 1)
+      : incrementIndex -= 1;
 
     this.setState({
       displayedFollower: this.state.followers[incrementIndex],
-      index: incrementIndex
-      });
+      index: incrementIndex,
+    });
   }
 
   prevNextKeys(event) {
-    if(event.which === 37) {
+    if (event.which === 37) {
       this.prevFollower();
     } else if (event.which === 39) {
       this.nextFollower();
-    };
+    }
   }
 
   render() {
-
     if (!this.state.followers) {
-      return <Loading />
+      return <Loading />;
     }
-
-    return (
-      <div className='FollowerResults__container'>
-        {this.state.displayedFollower}
-      </div>
-    )
 
     if (this.state.followers.length <= 0) {
       return (
@@ -161,13 +152,19 @@ export default class FollowerResults extends PureComponent {
             <h2 className="FollowerResults__h2">
               {this.state.followed.username} has no followers
             </h2>
-            <NavLink to='/followers' className="Nav__a--blue">
+            <NavLink to="/followers" className="Nav__a--blue">
               Try again?
             </NavLink>
           </div>
-          <div className="FollowerResults__bottomDiv"></div>
+          <div className="FollowerResults__bottomDiv" />
         </div>
-      )
+      );
     }
+
+    return (
+      <div className="FollowerResults__container">
+        {this.state.displayedFollower}
+      </div>
+    );
   }
 }

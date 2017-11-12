@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import PlayerInput from '../PlayerInput/PlayerInput';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
@@ -12,65 +13,65 @@ export default class Followers extends PureComponent {
     this.state = {
       name: '',
       image: null,
-      error: null
+      error: null,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReset = this.handleReset.bind(this);
-   }
+  }
 
   handleSubmit(id, username) {
     let errorMsg = null;
 
     getProfile(username)
-      .then(data => {
+      .then((data) => {
         this.setState(() => {
-          let newState = {};
-          newState['image'] = data.avatar_url;
-          newState['name'] = username;
+          const newState = {};
+          newState.image = data.avatar_url;
+          newState.name = username;
           return newState;
         });
       })
-      .catch(error => {
+      .catch((error) => {
         errorMsg = error.response.status;
         this.setState(() => {
-          let newState = {};
-          newState['error'] = errorMsg;
-          newState['name'] = username;
+          const newState = {};
+          newState.error = errorMsg;
+          newState.name = username;
           return newState;
-        })
+        });
       });
-    }
+  }
 
-   handleReset() {
+  handleReset() {
     this.setState(() => {
-      var newState = {};
-      newState['name'] = '';
-      newState['image'] = null;
-      newState['error'] = null;
+      const newState = {};
+      newState.name = '';
+      newState.image = null;
+      newState.error = null;
       return newState;
-    })
-   }
+    });
+  }
 
   render() {
-    const match = this.props.match;
-    const name = this.state.name;
-    const image = this.state.image;
-    const error = this.state.error;
+    const { match } = this.props;
+    const { name } = this.state;
+    const { image } = this.state;
+    const  { error } = this.state;
 
     return (
       <div>
         {!name &&
           <div className="Followers__container">
-            <h2 className='Followers__header'>Who follows...</h2>
+            <h2 className="Followers__header">Who follows...</h2>
             <PlayerInput
-              id='followed'
-              label= 'github username'
+              id="followed"
+              label="github username"
               onSubmit={this.handleSubmit}
-              className='PlayerInput--single'
-              buttonText='?'
-              buttonClass='Followers__button'
-              labelClass='screen-reader-text'
+              className="PlayerInput--single"
+              buttonText="?"
+              buttonClass="Followers__button"
+              labelClass="screen-reader-text"
             />
           </div>
         }
@@ -85,13 +86,14 @@ export default class Followers extends PureComponent {
                 <span>{name}</span> is not a GitHub user...
               </h2>
               <NavLink
-                to='/followers'
+                to="/followers"
                 className="Nav__a--blue"
-                onClick = {this.handleReset}>
+                onClick={this.handleReset}
+              >
                 Try again?
               </NavLink>
             </div>
-            <div className="FollowerResults__bottomDiv"></div>
+            <div className="FollowerResults__bottomDiv" />
           </div>
         }
 
@@ -103,24 +105,31 @@ export default class Followers extends PureComponent {
           <div>
             <PlayerPreview
               avatar={image}
-              username={name}>
+              username={name}
+            >
               <Link
-                className='PlayerPreview__button'
+                className="PlayerPreview__button"
                 to={{
-                   pathname: match.url + '/results',
-                   search: '?username=' + name
-                 }}>
+                   pathname: `${match.url}/results`,
+                   search: `?username=${name}`,
+                 }}
+              >
                   Get followers
               </Link>
               <button
-                className='PlayerPreview__button--reset'
-                onClick={this.handleReset}>
+                className="PlayerPreview__button--reset"
+                onClick={this.handleReset}
+              >
                   Reset
               </button>
             </PlayerPreview>
           </div>
         }
       </div>
-    )
+    );
   }
 }
+
+Followers.propTypes = {
+  match: PropTypes.object.isRequired,
+};

@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
 
-export default function Profile (props) {
-  const info = props.info;
+export default function Profile(props) {
+  const { info } = props;
 
   return (
     <PlayerPreview username={info.login} avatar={info.avatar_url}>
       {props.children}
-      <ul className='Profile__list'>
+      <ul className="Profile__list">
         {info.name && <li>{info.name}</li>}
         {info.location && <li>{info.location}</li>}
         {info.company && <li>{info.company}</li>}
@@ -18,9 +18,9 @@ export default function Profile (props) {
         {info.blog && <li><a href={info.blog}>{info.blog}</a></li>}
       </ul>
     </PlayerPreview>
-  )
+  );
 }
 
 Profile.propTypes = {
   info: PropTypes.object.isRequired,
-}
+};

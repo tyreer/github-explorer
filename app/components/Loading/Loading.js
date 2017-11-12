@@ -6,48 +6,44 @@ export default class Loading extends PureComponent {
     super(props);
 
     this.state = {
-      text: props.text
+      text: props.text,
     };
   }
 
   componentDidMount() {
-    let stopper = `${this.props.text} ...`;
-    this.interval = window.setInterval(function () {
+    const stopper = `${this.props.text} ...`;
+    this.interval = window.setInterval(() => {
       if (this.state.text === stopper) {
-        this.setState(function () {
-          return {
-            text: this.props.text
-          }
-        })
+        this.setState(() => ({
+          text: this.props.text,
+        }));
       } else {
-        this.setState(function (prevState) {
-          return {
-            text: `${prevState.text} .`
-          }
-        });
+        this.setState(prevState => ({
+          text: `${prevState.text} .`,
+        }));
       }
-    }.bind(this), this.props.speed)
+    }, this.props.speed);
   }
 
   componentWillUnmount() {
-   window.clearInterval(this.interval);
- }
+    window.clearInterval(this.interval);
+  }
 
   render() {
-   return (
-     <p className="Loading">
-       {this.state.text}
-     </p>
-   )
- }
+    return (
+      <p className="Loading">
+        {this.state.text}
+      </p>
+    );
+  }
 }
 
 Loading.propTypes = {
-  text: PropTypes.string.isRequired,
-  speed: PropTypes.number.isRequired,
+  text: PropTypes.string,
+  speed: PropTypes.number,
 };
 
 Loading.defaultProps = {
-  text: `Loading`,
+  text: 'Loading',
   speed: 300,
 };

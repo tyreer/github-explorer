@@ -6,25 +6,22 @@ export default function SelectLanguage(props) {
 
   return (
     <div>
-      <h1 className = 'SelectLanguage__header'>Most starred repos</h1>
-      <ul className = 'SelectLanguage__languages'>
-        {languages.map(language => {
-          return (
-            <li
-              key={language}
-              style={language === props.selectedLanguage ? {color: 'white'} : null }
-              onClick={() => {props.updateLanguage(language)}}
-              >
-              {language}
-            </li>
-          )
-        })}
+      <h1 className="SelectLanguage__header">Most starred repos</h1>
+      <ul className="SelectLanguage__languages">
+        {languages.map(language => (
+          <li
+            key={language}
+            style={language === props.selectedLanguage ? { color: 'white' } : null}
+            onClick={() => { props.updateLanguage(language); }}
+          >
+            {language}
+          </li>
+          ))}
       </ul>
     </div>
-  )
+  );
 }
 
 SelectLanguage.propTypes = {
   selectedLanguage: PropTypes.string.isRequired,
-  updateLanguage: PropTypes.func.isRequired,
-}
+};

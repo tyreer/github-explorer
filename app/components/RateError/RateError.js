@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-export default function RateError (props) {
+export default function RateError() {
   return (
     <div>
       <div className="RateError__container">
@@ -13,13 +12,13 @@ export default function RateError (props) {
           GitHub API rate limit exceeded
         </h2>
         <NavLink
-          to='/'
+          to="/"
           className="Nav__a--blue"
-          >
+        >
           Try again after a few minutes, or from any other IP address
         </NavLink>
       </div>
-      <div className="RateError__bottomDiv"></div>
+      <div className="RateError__bottomDiv" />
     </div>
-  )
+  );
 }

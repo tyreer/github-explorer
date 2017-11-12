@@ -1,7 +1,7 @@
 {
   "name": "react-scratch",
   "version": "1.0.0",
-  "description": "An exercise in building a React app from scratch loosly following Tyler McGinnis's React Fundamentals course",
+  "description": "An exercise in building a React app from scratch extended from Tyler McGinnis's React Fundamentals course",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/tyreer/react-scratch.git"
   },
   "author": "Robert Tyree",
-  "license": "ISC",
+  "license": "MIT",
   "babel": {
     "presets": [
       "env",
@@ -31,14 +31,26 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "query-string": "^4.3.4",
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
+    "babel-eslint": "^8.0.2",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.4.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.0",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prefer-object-spread": "^1.2.1",
+    "eslint-plugin-react": "^7.4.0",
     "extract-text-webpack-plugin": "^3.0.0-rc.1",
     "file-loader": "^0.11.2",
     "firebase-tools": "^3.9.2",
@@ -47,7 +59,6 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
-    "query-string": "^4.3.4",
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",

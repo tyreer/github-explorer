@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../../utils/api';
 import Loading from '../Loading/Loading';
 import SelectLanguage from '../SelectLanguage/SelectLanguage';
@@ -7,7 +6,6 @@ import RepoGrid from '../RepoGrid/RepoGrid';
 import RateError from '../RateError/RateError';
 
 export default class Famous extends PureComponent {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -17,7 +15,7 @@ export default class Famous extends PureComponent {
     this.updateLanguage = this.updateLanguage.bind(this);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.updateLanguage(this.state.selectedLanguage);
   }
 
@@ -26,23 +24,23 @@ export default class Famous extends PureComponent {
 
     this.setState({
       selectedLanguage: language,
-      repos: null
+      repos: null,
     });
 
     fetchPopularRepos(language)
       .then((repos) => {
         this.setState({
-          repos: repos
-        })
+          repos,
+        });
       })
-      .catch(error => {
+      .catch((error) => {
         errorMsg = error.response.status;
         this.setState(() => {
-          let newState = {};
-          newState['error'] = errorMsg;
-          newState['repos'] = [];
+          const newState = {};
+          newState.error = errorMsg;
+          newState.repos = [];
           return newState;
-        })
+        });
       });
   }
 
@@ -62,6 +60,6 @@ export default class Famous extends PureComponent {
           <RateError />
         }
       </div>
-    )
+    );
   }
 }

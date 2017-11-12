@@ -22,10 +22,10 @@
   font-size: 43px;
   height: 15vh;
   line-height: 15vh;
+  padding: 0;
   text-align: center;
   transition: all 0.25s;
   width: 35vw;
-  padding: 0;
 
   @media (--tablet) {
     height: 80px;

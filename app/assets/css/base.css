@@ -27,8 +27,8 @@ li {
 }
 
 a {
-  text-decoration: none;
   color: var(--color-blue);
+  text-decoration: none;
 }
 
 input,
@@ -51,10 +51,10 @@ a {
 
 /* Positions input labels out of view while remaining accessible to screen readers */
 .screen-reader-text {
-  position: absolute;
+  height: 1px;
   left: -10000px;
+  overflow: hidden;
+  position: absolute;
   top: auto;
   width: 1px;
-  height: 1px;
-  overflow: hidden;
 }

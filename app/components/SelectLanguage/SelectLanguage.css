@@ -4,8 +4,8 @@
 
 .SelectLanguage__languages {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-around;
 
   & li {
     cursor: pointer;
