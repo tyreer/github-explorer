@@ -3,7 +3,7 @@ Adventures in GitHub
 
 This React web app allows you to explore the GitHub public API.
 
-##### Check it out [here](https://react-scratch-uk.firebaseapp.com/)
+#### Check it out [here](https://react-scratch-uk.firebaseapp.com/)
 
 This app was built from scratch following Tyler McGinnis's [React Fundamentals](https://tylermcginnis.com/courses/react-fundamentals/) course.
 

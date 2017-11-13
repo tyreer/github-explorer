@@ -16,6 +16,20 @@
     padding: 25px 0;
   }
 
+  & .PlayerPreview__avatar {
+    height: 125px;
+    min-height: 125px;
+    min-width: 125px;
+    width: 125px;
+
+    @media (--desktop) {
+      height: 150px;
+      min-height: 150px;
+      min-width: 150px;
+      width: 150px;
+    }
+  }
+
   & .PlayerPreview__button--reset {
     bottom: 0;
     max-width: 118px;
