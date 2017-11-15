@@ -15,6 +15,6 @@ I've done quite a bit of refactoring to introduce:
 * BEM conventions
 * [PostCSS-cssnext](http://cssnext.io/) syntax
 
-I've also developed the visual design and UI from the [tutorial app](https://rt-react-fundamentals.firebaseapp.com/).
+I've also developed the visual design and UI from the [tutorial rendition of the app](https://rt-react-fundamentals.firebaseapp.com/).
 
 Thanks to [Tyler McGinnis](https://twitter.com/tylermcginnis) for the great course and [Alex Da Corte](http://alexdacorte.com/) for having an inspiring portfolio site.

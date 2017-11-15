@@ -147,7 +147,7 @@ export default class FollowerResults extends PureComponent {
     if (this.state.followers.length <= 0) {
       return (
         <div>
-          <div className="FollowerResults__container--error">
+          <div className="FollowerResults__container error">
             <h2 className="FollowerResults__h2">OH NO</h2>
             <h2 className="FollowerResults__h2">
               {this.state.followed.username} has no followers
