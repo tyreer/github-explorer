@@ -38,7 +38,14 @@
     "import/no-named-as-default": 2,
     "import/no-unresolved": 2,
     "import/prefer-default-export": 0,
-    "jsx-a11y/href-no-hash": 1,
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/label-has-for": [ 2, {
+            "components": [ "Label" ],
+            "required": {
+                "every": [ "id" ]
+            },
+            "allowChildren": false,
+        }],
     "jsx-quotes": 1,
     "max-len": [0, { "ignoreComments": true, "ignoreStrings": true }],
     "no-alert": 0,
@@ -53,6 +60,7 @@
     "react/display-name": [ 1, {"ignoreTranspilerName": false }],
     "react/forbid-prop-types": [1, {"forbid": ["any"]}],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-no-bind": [1, {"allowBind": true}],
     "react/no-danger": 1,
     "react/no-did-mount-set-state": 1,
     "react/no-did-update-set-state": 1,
@@ -64,10 +72,10 @@
     "react/prefer-es6-class": 1,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 1,
-    "react/require-extension": 1,
+    "react/require-extension": "off",
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1,
+    "react/wrap-multilines": "off",
     "semi": [1, "always"]
   },
   "globals": {

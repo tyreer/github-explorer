@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LanguageListItem from '../LanguageListItem/LanguageListItem';
 
 export default function SelectLanguage(props) {
   const languages = ['All', 'JavaScript', 'CSS', 'Swift', 'Python', 'C', 'Java', 'Haskell'];
@@ -8,15 +9,8 @@ export default function SelectLanguage(props) {
     <div>
       <h1 className="SelectLanguage__header">Most starred repos</h1>
       <ul className="SelectLanguage__languages">
-        {languages.map(language => (
-          <li
-            key={language}
-            style={language === props.selectedLanguage ? { color: 'white' } : null}
-            onClick={() => { props.updateLanguage(language); }}
-          >
-            {language}
-          </li>
-          ))}
+        {languages.map(language =>
+          <LanguageListItem key={language} item={language} selectedLanguage={props.selectedLanguage} onItemClick={props.updateLanguage} />)}
       </ul>
     </div>
   );
@@ -24,4 +18,5 @@ export default function SelectLanguage(props) {
 
 SelectLanguage.propTypes = {
   selectedLanguage: PropTypes.string.isRequired,
+  updateLanguage: PropTypes.func.isRequired,
 };

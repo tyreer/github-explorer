@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import queryString from 'query-string';
 import Loading from '../Loading/Loading';
@@ -63,11 +64,17 @@ export default class FollowerResults extends PureComponent {
               <div className="FollowerResults__topDiv">
                 <h2 className="FollowerResults__h2">{follower.data.name}</h2>
               </div>
-              <img
+              <div
+                role="presentation"
+                onKeyDown={this.nextFollower}
                 onClick={this.nextFollower}
-                className="FollowerResults__img"
-                src={follower.data.avatar_url}
-              />
+              >
+                <img
+                  alt="Avatar of follower"
+                  className="FollowerResults__img"
+                  src={follower.data.avatar_url}
+                />
+              </div>
               <p className="FollowerResults__p">{follower.data.location} {bio}</p>
               <a href={follower.data.html_url}>
                 <img
@@ -168,3 +175,7 @@ export default class FollowerResults extends PureComponent {
     );
   }
 }
+
+FollowerResults.propTypes = {
+  location: PropTypes.object.isRequired,
+};

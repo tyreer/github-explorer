@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { battle } from '../../utils/api';
 import Loading from '../Loading/Loading';
@@ -72,3 +73,7 @@ export default class Results extends PureComponent {
     );
   }
 }
+
+Results.propTypes = {
+  location: PropTypes.object.isRequired,
+};

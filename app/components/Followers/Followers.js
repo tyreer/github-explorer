@@ -109,6 +109,7 @@ export default class Followers extends PureComponent {
             >
               <Link
                 className="PlayerPreview__button"
+                href={`${match.url}/results`}
                 to={{
                    pathname: `${match.url}/results`,
                    search: `?username=${name}`,

@@ -102,6 +102,7 @@ export default class Battle extends PureComponent {
         {playerOneImage && playerTwoImage &&
           <Link
             className="PlayerPreview__button"
+            href={`${match.url}/results`}
             to={{
                pathname: `${match.url}/results`,
                search: `?playerOneName=${playerOneName}&playerTwoName=${playerTwoName}`,
