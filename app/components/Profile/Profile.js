@@ -23,5 +23,4 @@ export default function Profile(props) {
 
 Profile.propTypes = {
   info: PropTypes.object.isRequired,
-  children: PropTypes.element.isRequired,
 };

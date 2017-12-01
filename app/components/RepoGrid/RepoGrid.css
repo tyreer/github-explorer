@@ -29,4 +29,5 @@
 
 .RepoGrid__avatar:hover {
   transform: rotate(15deg);
+  box-shadow: 0 8px 6px -6px black;
 }

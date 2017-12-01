@@ -39,10 +39,9 @@ export default class Battle extends PureComponent {
 
   render() {
     const { match } = this.props;
-    const { playerOneName } = this.state;
-    const { playerOneImage } = this.state;
-    const { playerTwoName } = this.state;
-    const { playerTwoImage } = this.state;
+    const {
+      playerOneName, playerOneImage, playerTwoName, playerTwoImage, 
+    } = this.state;
 
     return (
       <div>

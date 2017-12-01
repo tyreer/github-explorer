@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import PlayerInput from '../PlayerInput/PlayerInput';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
-import RateError from '../RateError/RateError';
 import { getProfile } from '../../utils/api';
+import RateError from '../RateError/RateError';
 
 export default class Followers extends PureComponent {
   constructor(props) {
@@ -21,43 +21,32 @@ export default class Followers extends PureComponent {
   }
 
   handleSubmit(id, username) {
-    let errorMsg = null;
-
     getProfile(username)
       .then((data) => {
-        this.setState(() => {
-          const newState = {};
-          newState.image = data.avatar_url;
-          newState.name = username;
-          return newState;
+        this.setState({
+          image: data.avatar_url,
+          name: username,
         });
       })
       .catch((error) => {
-        errorMsg = error.response.status;
-        this.setState(() => {
-          const newState = {};
-          newState.error = errorMsg;
-          newState.name = username;
-          return newState;
+        this.setState({
+          error: error.response.status,
+          name: username,
         });
       });
   }
 
   handleReset() {
-    this.setState(() => {
-      const newState = {};
-      newState.name = '';
-      newState.image = null;
-      newState.error = null;
-      return newState;
+    this.setState({
+      name: '',
+      image: null,
+      error: null,
     });
   }
 
   render() {
     const { match } = this.props;
-    const { name } = this.state;
-    const { image } = this.state;
-    const  { error } = this.state;
+    const { name, image, error } = this.state;
 
     return (
       <div>

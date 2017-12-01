@@ -26,26 +26,25 @@ export default class Results extends PureComponent {
     ])
       .then((players) => {
         if (players === null) {
-          return this.setState(() => ({
+          return this.setState({
             error: 403,
             loading: false,
-          }));
+          });
         }
 
-        return this.setState(() => ({
+        return this.setState({
           error: null,
           winner: players[0],
           loser: players[1],
           loading: false,
-        }));
+        });
       });
   }
 
   render() {
-    const { error } = this.state;
-    const { winner } = this.state;
-    const { loser } = this.state;
-    const { loading } = this.state;
+    const {
+      error, winner, loser, loading, 
+    } = this.state;
 
     if (loading === true) {
       return <Loading />;

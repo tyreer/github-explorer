@@ -7,11 +7,6 @@
   flex-wrap: wrap;
   justify-content: space-around;
 
-  & li {
-    cursor: pointer;
-    padding: 20px;
-  }
-
   & :hover {
     color: white;
   }

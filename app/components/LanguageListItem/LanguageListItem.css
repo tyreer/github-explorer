@@ -1,0 +1,14 @@
+.LanguageListItem__button {
+  background: transparent;
+  border: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.LanguageListItem__button:focus {
+  outline: 0;
+}
+
+.LanguageListItem__button--selected {
+  color: white;
+}

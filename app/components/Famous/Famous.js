@@ -20,8 +20,6 @@ export default class Famous extends PureComponent {
   }
 
   updateLanguage(language) {
-    let errorMsg = null;
-
     this.setState({
       selectedLanguage: language,
       repos: null,
@@ -34,12 +32,9 @@ export default class Famous extends PureComponent {
         });
       })
       .catch((error) => {
-        errorMsg = error.response.status;
-        this.setState(() => {
-          const newState = {};
-          newState.error = errorMsg;
-          newState.repos = [];
-          return newState;
+        this.setState({
+          error: error.response.status,
+          repos: [],
         });
       });
   }

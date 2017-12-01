@@ -16,9 +16,9 @@ export default class PlayerInput extends PureComponent {
   handleChange(event) {
     const { value } = event.target;
 
-    this.setState(() => ({
+    this.setState({
       username: value,
-    }));
+    });
   }
 
   handleSubmit(event) {

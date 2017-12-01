@@ -14,9 +14,9 @@ export default class Loading extends PureComponent {
     const stopper = `${this.props.text} . .`;
     this.interval = window.setInterval(() => {
       if (this.state.text === stopper) {
-        this.setState(() => ({
+        this.setState({
           text: this.props.text,
-        }));
+        });
       } else {
         this.setState(prevState => ({
           text: `${prevState.text} .`,

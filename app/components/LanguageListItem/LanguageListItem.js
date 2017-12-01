@@ -7,17 +7,18 @@ export default function LanguageListItem(props) {
   };
 
   return (
-    <div
-      role="presentation"
-      onClick={_onClick}
-      onKeyDown={_onClick}
+    <li
+      className="LanguageListItem"
     >
-      <li
-        style={props.item === props.selectedLanguage ? { color: 'white' } : null}
-      >
-        {props.item}
-      </li>
-    </div>
+      <button
+        className={props.item === props.selectedLanguage
+          ? 'LanguageListItem__button LanguageListItem__button--selected'
+          : 'LanguageListItem__button'}
+        onClick={_onClick}
+        onKeyDown={_onClick}
+      > {props.item}
+      </button>
+    </li>
   );
 }
 
