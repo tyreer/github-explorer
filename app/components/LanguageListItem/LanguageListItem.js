@@ -15,7 +15,6 @@ export default function LanguageListItem(props) {
           ? 'LanguageListItem__button LanguageListItem__button--selected'
           : 'LanguageListItem__button'}
         onClick={_onClick}
-        onKeyDown={_onClick}
       > {props.item}
       </button>
     </li>
