@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export const navOptionLinks = {
+export const navOptionsProps = {
   links: [
     {
       link: '/followers',
@@ -17,9 +17,10 @@ export const navOptionLinks = {
       title: 'Famous',
     },
   ],
+  description: 'Good times with the GitHub API',
 };
 
-export const navHomeLink = {
+export const navHomeProps = {
   links: [
     {
       link: '/',
@@ -31,24 +32,16 @@ export const navHomeLink = {
 export default function Nav(props) {
   return (
     <div className="Nav__container">
-      <div className={props.addedProps.links.length > 1
-        ? 'Nav__container--expanded'
-        : ''}
-      >
-        <ul className={props.addedProps.links.length > 1
-          ? 'Nav--options'
-          : 'Nav'}
-        >
-          {props.addedProps.links.map(item =>
-                (<li
-                  key={item.title}
-                >
-                  <NavLink to={item.link}>
-                    {item.title}
-                  </NavLink>
-                </li>))}
+      <div className={props.addedProps.links.length > 1 ? 'Nav__container--options' : ''}>
+        <ul className={props.addedProps.links.length > 1 ? 'Nav--options' : 'Nav'}>
+          {props.addedProps.links.map(item => (
+            <li key={item.title}>
+              <NavLink to={item.link}>
+                {item.title}
+              </NavLink>
+            </li>))}
         </ul>
-        <p className="Nav__footer">Good times with the GitHub API</p>
+        <p className="Nav__footer">{props.addedProps.description}</p>
       </div>
     </div>
   );

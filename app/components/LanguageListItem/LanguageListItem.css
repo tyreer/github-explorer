@@ -8,6 +8,11 @@
 .LanguageListItem__button:focus {
   outline: 0;
   border-bottom: 2px solid white;
+  border-radius: 0;
+}
+
+.LanguageListItem__button::-moz-focus-inner {
+  border: 0;
 }
 
 .LanguageListItem__button--selected {

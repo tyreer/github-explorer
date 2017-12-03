@@ -1,9 +1,10 @@
 import React from 'react';
 
 export default function AddProps(WrappedComponent, addedProps) {
-  return () => (
+  return props => (
     <WrappedComponent
       addedProps={addedProps}
+      {...props}
     />
   );
 }

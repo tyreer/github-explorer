@@ -5,7 +5,7 @@
   margin: 10px var(--base-small-margin) var(--base-small-margin);
 }
 
-.Nav__container--expanded {
+.Nav__container--options {
   align-self: center;
   display: flex;
   flex-direction: column;
@@ -32,10 +32,15 @@
     color: white;
     display: block;
     padding: 10px 0;
+    transition: all 0.2s;
+  }
+
+  & a:hover {
+    padding: 10px 10px;
   }
 }
 
-.Nav--options{
+.Nav--options {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -60,6 +65,10 @@
     border-top: none;
   }
 
+  & li:hover {
+    border-right: 3px solid white;
+  }
+
   & a {
     display: block;
     padding: 25px 0 70px 15px;
@@ -69,11 +78,6 @@
       padding-bottom: 120px;
     }
   }
-
-  & li:hover {
-    border-right: 3px solid white;
-  }
-
 }
 
 .Nav__a--blue {
@@ -81,8 +85,13 @@
 }
 
 .Nav__footer {
+  display: none;
+}
+
+.Nav__container--options .Nav__footer {
   bottom: 0;
   color: white;
+  display: initial;
   left: 0;
   position: fixed;
   right: 0;
