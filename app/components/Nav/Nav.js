@@ -32,21 +32,28 @@ export const navHomeProps = {
 export default function Nav(props) {
   return (
     <div className="Nav__container">
-      <div className={props.addedProps.links.length > 1 ? 'Nav__container--options' : ''}>
-        <ul className={props.addedProps.links.length > 1 ? 'Nav--options' : 'Nav'}>
-          {props.addedProps.links.map(item => (
+      <div className={props.links.length > 1 ? 'Nav__container--options' : ''}>
+        <ul className={props.links.length > 1 ? 'Nav--options' : 'Nav'}>
+          {props.links.map(item => (
             <li key={item.title}>
               <NavLink to={item.link}>
                 {item.title}
               </NavLink>
             </li>))}
         </ul>
-        <p className="Nav__footer">{props.addedProps.description}</p>
+        {props.description.length > 1 &&
+          <p className="Nav__footer">{props.description}</p>
+        }
       </div>
     </div>
   );
 }
 
 Nav.propTypes = {
-  addedProps: PropTypes.object.isRequired,
+  links: PropTypes.array.isRequired,
+  description: PropTypes.string,
+};
+
+Nav.defaultProps = {
+  description: '',
 };
