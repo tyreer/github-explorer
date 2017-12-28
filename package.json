@@ -1,7 +1,7 @@
 {
   "name": "react-scratch",
   "version": "1.0.0",
-  "description": "An exercise in building a React app from scratch extended from Tyler McGinnis's React Fundamentals course",
+  "description": "React app exploring the GitHub public API. Built with Webpack, PostCSS-cssnext, ESLint and without create-react-app.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
@@ -28,10 +28,11 @@
   "homepage": "https://github.com/tyreer/react-scratch#readme",
   "dependencies": {
     "axios": "^0.16.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "prop-types": "^15.5.8",
+    "query-string": "^4.3.4",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "query-string": "^4.3.4",
     "react-router-dom": "^4.1.1"
   },
   "devDependencies": {

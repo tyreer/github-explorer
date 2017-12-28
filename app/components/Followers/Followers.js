@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link, NavLink } from 'react-router-dom';
 import PlayerInput from '../PlayerInput/PlayerInput';
@@ -6,21 +6,18 @@ import PlayerPreview from '../PlayerPreview/PlayerPreview';
 import { getProfile } from '../../utils/api';
 import RateError from '../RateError/RateError';
 
-export default class Followers extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: '',
-      image: null,
-      error: null,
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleReset = this.handleReset.bind(this);
+export default class Followers extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
   }
 
-  handleSubmit(id, username) {
+  state = {
+    name: '',
+    image: null,
+    error: null,
+  };
+
+  handleSubmit = (id, username) => {
     getProfile(username)
       .then((data) => {
         this.setState({
@@ -36,7 +33,7 @@ export default class Followers extends PureComponent {
       });
   }
 
-  handleReset() {
+  handleReset = () => {
     this.setState({
       name: '',
       image: null,
@@ -119,7 +116,3 @@ export default class Followers extends PureComponent {
     );
   }
 }
-
-Followers.propTypes = {
-  match: PropTypes.object.isRequired,
-};

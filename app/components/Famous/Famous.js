@@ -1,25 +1,21 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { fetchPopularRepos } from '../../utils/api';
 import Loading from '../Loading/Loading';
 import SelectLanguage from '../SelectLanguage/SelectLanguage';
 import RepoGrid from '../RepoGrid/RepoGrid';
 import RateError from '../RateError/RateError';
 
-export default class Famous extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedLanguage: 'All',
-      repos: null,
-    };
-    this.updateLanguage = this.updateLanguage.bind(this);
-  }
+export default class Famous extends Component {
+  state = {
+    selectedLanguage: 'All',
+    repos: null,
+  };
 
   componentDidMount() {
     this.updateLanguage(this.state.selectedLanguage);
   }
 
-  updateLanguage(language) {
+  updateLanguage = (language) => {
     this.setState({
       selectedLanguage: language,
       repos: null,

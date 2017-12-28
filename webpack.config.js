@@ -8,11 +8,11 @@ const config = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     rules: [
-      { test: /\.(js)$/, use: 'babel-loader' },
+      { test: /\.(js)$/, exclude: /node_modules/, use: 'babel-loader' },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -26,28 +26,28 @@ const config = {
         }),
       },
       { test: /\.(png|jpg|svg|gif)$/, use: 'url-loader' },
-    ]
+    ],
   },
   plugins: [
     new ExtractTextPlugin('index.css'),
     new HtmlWebpackPlugin({
-      template: 'app/index.html'
-    })
+      template: 'app/index.html',
+    }),
   ],
   devServer: {
     historyApiFallback: true,
-  }
+  },
 };
 
 if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new webpack.DefinePlugin({
       'process.env': {
-        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-      }
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+      },
     }),
-    new webpack.optimize.UglifyJsPlugin()
-  )
+    new webpack.optimize.UglifyJsPlugin(),
+  );
 }
 
 

@@ -1,14 +1,20 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class Loading extends PureComponent {
-  constructor(props) {
-    super(props);
+export default class Loading extends Component {
+  static propTypes = {
+    text: PropTypes.string,
+    speed: PropTypes.number,
+  };
 
-    this.state = {
-      text: props.text,
-    };
-  }
+  static defaultProps = {
+    text: 'Loading',
+    speed: 300,
+  };
+
+  state = {
+    text: this.props.text,
+  };
 
   componentDidMount() {
     const stopper = `${this.props.text} . .`;
@@ -37,13 +43,3 @@ export default class Loading extends PureComponent {
     );
   }
 }
-
-Loading.propTypes = {
-  text: PropTypes.string,
-  speed: PropTypes.number,
-};
-
-Loading.defaultProps = {
-  text: 'Loading',
-  speed: 300,
-};

@@ -1,25 +1,22 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PlayerPreview from '../PlayerPreview/PlayerPreview';
 import PlayerInput from '../PlayerInput/PlayerInput';
 
-export default class Battle extends PureComponent {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      playerOneName: '',
-      playerTwoName: '',
-      playerOneImage: null,
-      playerTwoImage: null,
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleReset = this.handleReset.bind(this);
+export default class Battle extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
   }
 
-  handleSubmit(id, username) {
+  state = {
+    playerOneName: '',
+    playerTwoName: '',
+    playerOneImage: null,
+    playerTwoImage: null,
+  };
+
+  handleSubmit = (id, username) => {
     this.setState(() => {
       const newState = {};
       newState[`${id}Name`] = username;
@@ -28,7 +25,7 @@ export default class Battle extends PureComponent {
     });
   }
 
-  handleReset(id) {
+  handleReset = (id) => {
     this.setState(() => {
       const newState = {};
       newState[`${id}Name`] = '';
@@ -40,7 +37,7 @@ export default class Battle extends PureComponent {
   render() {
     const { match } = this.props;
     const {
-      playerOneName, playerOneImage, playerTwoName, playerTwoImage, 
+      playerOneName, playerOneImage, playerTwoName, playerTwoImage,
     } = this.state;
 
     return (
@@ -114,7 +111,3 @@ export default class Battle extends PureComponent {
     );
   }
 }
-
-Battle.propTypes = {
-  match: PropTypes.object.isRequired,
-};

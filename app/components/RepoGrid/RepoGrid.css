@@ -9,11 +9,14 @@
   text-align: center;
 }
 
+.RepoGrid__repo-listing a {
+  display: block;
+}
+
 .RepoGrid__rank {
   font-size: 20px;
   margin: 10px;
 }
-
 
 .RepoGrid__avatar {
   background-color: whitesmoke;
@@ -28,6 +31,6 @@
 }
 
 .RepoGrid__avatar:hover {
-  transform: rotate(15deg);
   box-shadow: 0 8px 6px -6px black;
+  transform: rotate(-5deg);
 }

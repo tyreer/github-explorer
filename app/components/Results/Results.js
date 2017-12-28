@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import queryString from 'query-string';
 import { battle } from '../../utils/api';
@@ -6,16 +6,17 @@ import Loading from '../Loading/Loading';
 import Player from '../Player/Player';
 import RateError from '../RateError/RateError';
 
-export default class Results extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      winner: null,
-      loser: null,
-      error: null,
-      loading: true,
-    };
-  }
+export default class Results extends Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+  };
+
+  state = {
+    winner: null,
+    loser: null,
+    error: null,
+    loading: true,
+  };
 
   componentDidMount() {
     const playerNames = queryString.parse(this.props.location.search);
@@ -43,7 +44,7 @@ export default class Results extends PureComponent {
 
   render() {
     const {
-      error, winner, loser, loading, 
+      error, winner, loser, loading,
     } = this.state;
 
     if (loading === true) {
@@ -72,7 +73,3 @@ export default class Results extends PureComponent {
     );
   }
 }
-
-Results.propTypes = {
-  location: PropTypes.object.isRequired,
-};

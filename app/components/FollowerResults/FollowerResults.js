@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import queryString from 'query-string';
@@ -6,18 +6,15 @@ import Loading from '../Loading/Loading';
 import { getAllFollowersData } from '../../utils/api';
 import logo from '../../assets/github-logo.png';
 
-export default class FollowerResults extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      followers: null,
-      displayedFollower: null,
-      index: 0,
-    };
+export default class FollowerResults extends Component {
+  static propTypes = {
+    location: PropTypes.object.isRequired,
+  }
 
-    this.nextFollower = this.nextFollower.bind(this);
-    this.prevFollower = this.prevFollower.bind(this);
-    this.prevNextKeys = this.prevNextKeys.bind(this);
+  state = {
+    followers: null,
+    displayedFollower: null,
+    index: 0,
   }
 
   componentWillMount() {
@@ -112,7 +109,7 @@ export default class FollowerResults extends PureComponent {
     document.removeEventListener('keydown', this.prevNextKeys);
   }
 
-  nextFollower() {
+  nextFollower = () => {
     let incrementIndex = this.state.index;
 
     incrementIndex === (this.state.followers.length - 1)
@@ -125,7 +122,7 @@ export default class FollowerResults extends PureComponent {
     });
   }
 
-  prevFollower() {
+  prevFollower = () => {
     let incrementIndex = this.state.index;
 
     incrementIndex === 0
@@ -138,7 +135,7 @@ export default class FollowerResults extends PureComponent {
     });
   }
 
-  prevNextKeys(event) {
+  prevNextKeys = (event) => {
     if (event.which === 37) {
       this.prevFollower();
     } else if (event.which === 39) {
@@ -175,7 +172,3 @@ export default class FollowerResults extends PureComponent {
     );
   }
 }
-
-FollowerResults.propTypes = {
-  location: PropTypes.object.isRequired,
-};

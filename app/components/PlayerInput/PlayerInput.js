@@ -1,19 +1,29 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class PlayerInput extends PureComponent {
-  constructor(props) {
-    super(props);
+export default class PlayerInput extends Component {
+  static propTypes = {
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string,
+    onSubmit: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    labelClass: PropTypes.string,
+    buttonClass: PropTypes.string.isRequired,
+    buttonText: PropTypes.string,
+  };
 
-    this.state = {
-      username: '',
-    };
+  static defaultProps = {
+    label: 'Username',
+    className: 'PlayerInput__container',
+    buttonText: 'Submit',
+    labelClass: 'PlayerInput__header',
+  };
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  state = {
+    username: '',
+  };
 
-  handleChange(event) {
+  handleChange = (event) => {
     const { value } = event.target;
 
     this.setState({
@@ -21,7 +31,7 @@ export default class PlayerInput extends PureComponent {
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     this.props.onSubmit(
@@ -58,20 +68,3 @@ export default class PlayerInput extends PureComponent {
     );
   }
 }
-
-PlayerInput.propTypes = {
-  id: PropTypes.string.isRequired,
-  label: PropTypes.string,
-  onSubmit: PropTypes.func.isRequired,
-  className: PropTypes.string,
-  labelClass: PropTypes.string,
-  buttonClass: PropTypes.string.isRequired,
-  buttonText: PropTypes.string,
-};
-
-PlayerInput.defaultProps = {
-  label: 'Username',
-  className: 'PlayerInput__container',
-  buttonText: 'Submit',
-  labelClass: 'PlayerInput__header',
-};
