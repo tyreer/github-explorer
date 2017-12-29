@@ -17,21 +17,19 @@ export default class Followers extends Component {
     error: null,
   };
 
-  handleSubmit = (id, username) => {
-    getProfile(username)
-      .then((data) => {
-        this.setState({
-          image: data.avatar_url,
-          name: username,
-        });
-      })
-      .catch((error) => {
-        this.setState({
-          error: error.response.status,
-          name: username,
-        });
-      });
-  }
+ handleSubmit = async (id, username) => {
+   const data = await getProfile(username);
+
+   (data instanceof Error)
+     ? this.setState({
+       error: parseInt(data.message, 10),
+       name: username,
+     })
+     : this.setState({
+       image: data.avatar_url,
+       name: username,
+     });
+ }
 
   handleReset = () => {
     this.setState({

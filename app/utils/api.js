@@ -1,9 +1,19 @@
 import axios from 'axios';
 
-export function getProfile(username) {
-  return axios.get(`https://api.github.com/users/${username}`)
-    .then(user => user.data);
+export async function getProfile(username) {
+  try {
+    const response = await fetch(`https://api.github.com/users/${username}`);
+
+    if (!response.ok) {
+      throw new Error(response.status);
+    } else {
+      return await response.json();
+    }
+  } catch (error) {
+    return error;
+  }
 }
+
 
 function getRepos(username) {
   return axios.get(`https://api.github.com/users/${username}/repos?per_page=100`)
